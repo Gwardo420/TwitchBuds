@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Gwardo420/TwitchBuds/static/css/main.047fa54d.chunk.css",
+    "main.js": "/Gwardo420/TwitchBuds/static/js/main.5ca02b45.chunk.js",
+    "main.js.map": "/Gwardo420/TwitchBuds/static/js/main.5ca02b45.chunk.js.map",
+    "runtime-main.js": "/Gwardo420/TwitchBuds/static/js/runtime-main.a0c19c35.js",
+    "runtime-main.js.map": "/Gwardo420/TwitchBuds/static/js/runtime-main.a0c19c35.js.map",
+    "static/css/2.61b4cb56.chunk.css": "/Gwardo420/TwitchBuds/static/css/2.61b4cb56.chunk.css",
+    "static/js/2.cc54ad5a.chunk.js": "/Gwardo420/TwitchBuds/static/js/2.cc54ad5a.chunk.js",
+    "static/js/2.cc54ad5a.chunk.js.map": "/Gwardo420/TwitchBuds/static/js/2.cc54ad5a.chunk.js.map",
+    "static/js/3.2dc26d60.chunk.js": "/Gwardo420/TwitchBuds/static/js/3.2dc26d60.chunk.js",
+    "static/js/3.2dc26d60.chunk.js.map": "/Gwardo420/TwitchBuds/static/js/3.2dc26d60.chunk.js.map",
+    "index.html": "/Gwardo420/TwitchBuds/index.html",
+    "static/css/2.61b4cb56.chunk.css.map": "/Gwardo420/TwitchBuds/static/css/2.61b4cb56.chunk.css.map",
+    "static/css/main.047fa54d.chunk.css.map": "/Gwardo420/TwitchBuds/static/css/main.047fa54d.chunk.css.map",
+    "static/js/2.cc54ad5a.chunk.js.LICENSE.txt": "/Gwardo420/TwitchBuds/static/js/2.cc54ad5a.chunk.js.LICENSE.txt",
+    "static/media/discord.eef0be7b.png": "/Gwardo420/TwitchBuds/static/media/discord.eef0be7b.png",
+    "static/media/gwardo.f75ba053.png": "/Gwardo420/TwitchBuds/static/media/gwardo.f75ba053.png",
+    "static/media/card.css": "/Gwardo420/TwitchBuds/static/media/purpleshade.32eda00c.jpg",
+    "static/media/twitter.57573394.png": "/Gwardo420/TwitchBuds/static/media/twitter.57573394.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a0c19c35.js",
+    "static/css/2.61b4cb56.chunk.css",
+    "static/js/2.cc54ad5a.chunk.js",
+    "static/css/main.047fa54d.chunk.css",
+    "static/js/main.5ca02b45.chunk.js"
+  ]
+}
