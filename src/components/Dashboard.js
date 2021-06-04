@@ -57,9 +57,6 @@ export default function Dashboard() {
 
     return (
         <>
-        <div className="Card text-center mt-4">
-             <h1>Promotion Dashboard</h1>
-        </div>
 
         <div className="Card mt-3 text-center">
             <h3>{currentUser.displayName ? <h3>{currentUser.displayName}</h3> : <h3>Signed in with Email {currentUser.email}</h3>}</h3>
@@ -67,23 +64,17 @@ export default function Dashboard() {
         
             <div className="mb-3 mt-3">
                 <Button variant="danger" onClick={handleLogout}>Log Out</Button>
-            </div>            
+            </div>   
+
             <div className="mb-3 mt-3">
                 <Button variant="success" onClick={handleSupport}>Support Project</Button>
             </div>
         </div>
-            
-        {!promotions && (
-            <>
-                <h4 className="Card text-center">You have not applied for a promotion yet.</h4>
-                <div className="text-white text-center">Your promotions will appear here!</div>
-            </>
-        )}
 
         {promotions && (
             <>                       
             <Card className="PromotionCard mt-3">
-                <h3 className="text-center text-white mt-3">⬇️ Your Promotions ⬇️</h3> 
+                <h3 className="text-center text-white mt-3">⬇️ Submitted Promotion's ⬇️</h3> 
                     <Card.Body>
                     {promotions.map((promos) => (
                             <div className="Card text-center" id={promos.contactAddress}>
@@ -109,18 +100,33 @@ export default function Dashboard() {
         )}
 
         <div className="Card mt-3">
-            <h3 className="text-center text-white">⬇️ Sign Up For A Promotional Slot ⬇️</h3>
+            <h3 className="text-center text-white">⬇️ Twitch Buds Station ⬇️</h3>
             <Card className="SubmitPromo mb-3">
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}
+                    
                     <h3 className="text-center text-white">Use Retweet Picker</h3>
                     <Link to="/retweet-picker" className="btn btn-primary w-100 mt-3 mb-3">
                         Retweet Picker
                     </Link>
-                    <h3 className="text-center text-white">Get Promoted Today</h3>
-                    <Link to="/setup-promotion" className="btn btn-primary w-100 mt-3 mb-3">
-                        Apply
-                    </Link>
+
+
+                    {!promotions && (
+                        <>
+                            <div className="Card">
+                            <h4 className="text-center mt-3">You have not applied for a promotion yet.</h4>
+                            
+                            <Link to="/setup-promotion" className="btn btn-primary w-100 mt-3 mb-3">
+                                Apply
+                            </Link>
+
+                            </div>
+                        </>
+                    )}
+
+
+                    
+                    
                     <h3 className="text-center text-white">Contact Twitch Buds</h3>
                     <Link to="/contact" className="btn btn-primary w-100 mt-3 mb-3">
                         Contact Form

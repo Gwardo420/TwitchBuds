@@ -11,6 +11,7 @@ import UpdateProfile from './UpdateProfile'
 import PromotionGiveaway from './PromotionGiveaway'
 import ContactTwitchBuds from './ContactTwitchBuds'
 import RetweetChecker from './RetweetChecker'
+import Creator from './Creator'
 
 function App() {
     return (
@@ -29,6 +30,7 @@ function App() {
                             <PrivateRoute path="/setup-promotion" component={PromotionGiveaway} />
                             <PrivateRoute path="/contact" component={ContactTwitchBuds} />
                             <Route exact path="/" component={Dashboard} />
+                            <Route path="/creator" component={Creator} />
                             <Route path="/signup" component={Signup} />
                             <Route path="/login" component={Login} />
                             <Route path="/forgot-password" component={ForgotPassword} />
