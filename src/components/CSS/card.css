@@ -1,0 +1,64 @@
+.Card {
+    color: white;
+    text-shadow: 0 0 10px black;
+    background: linear-gradient(rgb(140, 0, 255), rgb(204, 0, 255));
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+    padding: 5px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: rgb(183, 0, 255);
+}
+
+.SubmitPromo {
+    border-color: rgb(183, 0, 255);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+    background: linear-gradient(rgb(140, 0, 255), rgb(204, 0, 255));
+}
+
+.Background {
+    background-size: cover;
+    background-position: cover;
+    background-image: url("../images/purpleshade.jpg");
+}
+
+.Gwardo {
+    box-shadow: 0 0 10px black;
+    padding: 5px;
+    background: linear-gradient(rgb(255, 0, 98), rgb(238, 0, 238));
+    border-radius: 50%;
+}
+
+.Success {
+    background: linear-gradient(to right, green, lightgreen)
+}
+
+.PromotionCard {
+    color: white;
+    box-shadow: 0 0 10px black;
+    background: linear-gradient(rgb(255, 0, 98), rgb(238, 0, 238));
+}
+
+.CardTitle {
+    display: flex;
+}
+
+.PromotionName {
+    background: green;
+}
+
+.PromotionStatus {
+    background: rgb(255, 123, 0);
+}
+
+.FormGroup {
+	margin: 0 15px 20px;
+	padding: 0;
+	border-style: none;
+	background-color: #7795f8;
+	will-change: opacity, transform;
+	box-shadow: 0 6px 9px rgba(50, 50, 93, 0.06), 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 0 #829fff;
+	border-radius: 4px;
+}
