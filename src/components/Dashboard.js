@@ -69,7 +69,7 @@ export default function Dashboard() {
             <div className="mb-3 mt-3">
                 <Button className="m-1" variant="danger" onClick={handleLogout}>Log Out</Button>
                 <Button className="m-1" variant="success" onClick={handleSupport}>Support Project</Button>
-                <Button className="Card" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
+                <Button className="m-1" variant="primary" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>   
 
         </div>

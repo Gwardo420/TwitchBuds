@@ -5,7 +5,7 @@ import { Link, useHistory } from 'react-router-dom';
 import './CSS/card.css';
 import twitchpng from './images/Twitch Buds Twitter (1).png'
 import twitterPNG from './images/twitter.png'
-import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed'
+import { TwitterTweetEmbed, TwitterTimelineEmbed, TwitterDMButton } from 'react-twitter-embed'
 
 export default function Login() {
     const emailRef = useRef()
@@ -58,6 +58,10 @@ export default function Login() {
         history.push('/help')
     }
 
+    function contact() {
+        history.push('/contact')
+    }
+
 
     return (
         <>
@@ -74,11 +78,13 @@ export default function Login() {
             
             <div className="Card">
                 <h3>Our Social Media</h3>
-                <Button className="Card m-1" onClick={handleTwitter}>Twitter</Button>
-                <Button className="Card m-1" onClick={handleDiscord}>Discord</Button>
-                <Button className="Card m-1" onClick={meetCreator}>Creator</Button>
-                <Button className="Card" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
+                <Button className="m-1" onClick={handleTwitter}>Twitter</Button>
+                <Button className="m-1" onClick={handleDiscord}>Discord</Button>
+                <Button className="m-1" onClick={meetCreator}>Creator</Button>
+                <Button className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
+                <Button className="m-1" onClick={contact}>Contact TwitchBuds</Button>
             </div>
+
 
         <div className="Card mt-3">
             <h3>Recent Tweets</h3>
@@ -133,10 +139,14 @@ export default function Login() {
             </Card.Body>
         </Card>
 
-        <div className="w-100 text-center mt-2 text-white text-shadow Card">
+        <div className="w-100 text-center mt-3 text-white text-shadow Card">
             Need an account? <Link to="/signup"> Sign Up </Link>
         </div>
 
+        <div className="Card text-center mt-3">
+            <h3>Twitch Buds Channel</h3>
+            <iframe src="https://player.twitch.tv/?channel=twitchbuds&parent=http://www.twitchbuds.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+        </div>
         </>
     )
 }

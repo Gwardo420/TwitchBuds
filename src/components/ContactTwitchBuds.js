@@ -3,7 +3,6 @@ import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
 import { database } from '../firebase'
-import { Timestamp } from 'firebase/firestore';
 import './CSS/card.css';
 
 export default function ContactTwitchBuds() {
@@ -14,20 +13,27 @@ export default function ContactTwitchBuds() {
     const [contactEmail, setContactEmail] = useState("")
     const [question, setQuestion] = useState("")
     const [message, setMessage] = useState(false)
+    const history = useHistory()
 
     function handleSubmit(e) {
         e.preventDefault()
-
-        database.contactForms.doc(currentUser.email).collection("submittions").add({
-            question: question,
-            userEmail: currentUser.email,
-            contactAddress: contactEmail
-        })
+        setLoading(true)
+        setMessage('Submission Successful! Returning you to your Dashboard if you are signed in.')
+        
+        setTimeout(() => {
+            database.contactForms.doc("Contact").collection("Users Contact").add({
+                question: question,
+                contactAddress: contactEmail
+            })
+        }, 2000)
 
         setContactEmail("")
         setQuestion("")
         setDiscordId("")
-        setMessage('Submission was successful!')
+
+        setTimeout(() => {
+            history.push('/')
+        }, 2000)
 
     }
 
@@ -74,7 +80,6 @@ export default function ContactTwitchBuds() {
                             <Form.Control
 
                             type="text" 
-                            required
                             value={discordId}
                             onChange={e => setDiscordId(e.target.value)}
                             placeholder="Discord Username (Optional)"

@@ -29,7 +29,7 @@ function App() {
                             <PrivateRoute exact path="/" component={Dashboard} />
                             <PrivateRoute path="/update-profile" component={UpdateProfile}/>
                             <PrivateRoute path="/setup-promotion" component={PromotionGiveaway} />
-                            <PrivateRoute path="/contact" component={ContactTwitchBuds} />
+                            <Route path="/contact" component={ContactTwitchBuds} />
                             <Route exact path="/" component={Dashboard} />
                             <Route path="/help" component={Help} />
                             <Route path="/creator" component={Creator} />

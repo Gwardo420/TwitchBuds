@@ -4,15 +4,10 @@ import { useAuth } from '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 import './CSS/card.css';
 import twitchpng from './images/Twitch Buds Twitter (1).png'
-import twitterPNG from './images/twitter.png'
 import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed'
 
 export default function Help() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
     const { login, twitter } = useAuth()
-    const [error, setError] = useState('')
-    const [loading, setLoading] = useState(false)
     const history = useHistory()
 
     async function handleSumbit(e) {
@@ -20,22 +15,24 @@ export default function Help() {
 
         try {
         
-            setError('')
-            setLoading(true)
             history.push('/')
         
         } catch {
         
-            setError('Failed to log in')
-        
+
         }
-
-        setLoading(false)
-
     }
 
     function meetCreator() {
         history.push('/creator')
+    }
+
+    function GotoPromotion1() {
+        window.open('https://twitter.com/TwitchBuds/status/1384855254739693571?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1384855254739693571%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2Flocalhost%3A3000%2Fhelp')
+    }
+
+    function GotoPromotion2() {
+        window.open('https://twitter.com/TwitchBuds/status/1384492299577610240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1384492299577610240%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2Flocalhost%3A3000%2Fhelp')
     }
 
 
@@ -43,13 +40,14 @@ export default function Help() {
         <>
         <div className="text-center mt-3 text-white">
             
-            <div>
-                <img className="Gwardo" height="100" src={twitchpng}></img>
-             <h1 className="mt-3">Simple Streamer Promotion</h1>
-             <div className="Card">
-                <Button className="Card m-1" onClick={handleSumbit}>Return To Dashboard</Button>
+
+            <img className="Gwardo" height="100" src={twitchpng}></img>
+            <h1 className="mt-3">Simple Streamer Promotion</h1>
+            <div className="PromotionCard">
+                <Button className="m-1" onClick={handleSumbit}>Return To Dashboard</Button>
+                <Button className="m-1" onClick={meetCreator}>Twitch Buds Creator</Button>
             </div>
-            </div>
+
 
             <div className="Card mt-3 mb-3">
                 <h3 className='mt-3'>
@@ -61,7 +59,7 @@ export default function Help() {
                 </div>
              </div>
 
-             <div className="Card mt-3 mb-3">
+             <div className="Card mt-3 mb-3 text-center">
                 <h3 className='mt-3'>
                     Promotional Examples
                 </h3>
@@ -73,19 +71,25 @@ export default function Help() {
                     <p>Twitch Buds will handle everything from choosing a winner to paying out the winner after your promotion has ended.</p>
                 </div>
 
-                <TwitterTweetEmbed 
+                <div className="d-grid justify-content-center align-items-center">
+                    <h3>Promotion Example #1</h3>
+                    <TwitterTweetEmbed 
                     // Here goes your copied ID.
                     tweetId={"1384855254739693571"} 
-                    // Style options goes here:
-                    optins={{width: "900px"}} 
+                    theme="dark"
                 />
+                <Button onClick={GotoPromotion1}>View This Tweet</Button>
+                </div>
 
-                <TwitterTweetEmbed 
+                <div className="d-grid justify-content-center align-items-center mt-3">
+                    <h3>Promotion Example #2</h3>
+                    <TwitterTweetEmbed 
                     // Here goes your copied ID.
                     tweetId={"1384492299577610240"} 
-                    // Style options goes here:
-                    optins={{width: "900px"}} 
+                    theme="dark"
                 />
+                <Button onClick={GotoPromotion2}>View This Tweet</Button>
+                </div>
 
                 </div>
 
@@ -101,8 +105,9 @@ export default function Help() {
              </div>
 
 
-            <div className="Card">
-                <Button className="Card m-1" onClick={handleSumbit}>Return To Dashboard</Button>
+            <div className="PromotionCard mb-3">
+                <Button variant="primary" className="m-1" onClick={handleSumbit}>Return To Dashboard</Button>
+                <Button className="m-1" onClick={meetCreator}>Twitch Buds Creator</Button>
             </div>
 
         </div>
