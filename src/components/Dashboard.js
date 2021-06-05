@@ -55,6 +55,10 @@ export default function Dashboard() {
         window.open("https://cash.app/$Twitchbuds")
     }
 
+    async function handleTwitchBuds() {
+        history.push('/help')
+    }
+
     return (
         <>
 
@@ -63,12 +67,11 @@ export default function Dashboard() {
             <img className="Gwardo mt-3" src={currentUser.photoURL}></img>
         
             <div className="mb-3 mt-3">
-                <Button variant="danger" onClick={handleLogout}>Log Out</Button>
+                <Button className="m-1" variant="danger" onClick={handleLogout}>Log Out</Button>
+                <Button className="m-1" variant="success" onClick={handleSupport}>Support Project</Button>
+                <Button className="Card" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>   
 
-            <div className="mb-3 mt-3">
-                <Button variant="success" onClick={handleSupport}>Support Project</Button>
-            </div>
         </div>
 
         {promotions && (
@@ -127,7 +130,7 @@ export default function Dashboard() {
 
                     
                     
-                    <h3 className="text-center text-white">Contact Twitch Buds</h3>
+                    <h3 className="mt-3 text-center text-white">Contact Twitch Buds</h3>
                     <Link to="/contact" className="btn btn-primary w-100 mt-3 mb-3">
                         Contact Form
                     </Link>

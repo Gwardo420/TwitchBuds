@@ -1,8 +1,11 @@
-import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
-import { Link, useHistory } from 'react-router-dom'
+import React, { useRef, useState } from 'react';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useHistory } from 'react-router-dom';
 import './CSS/card.css';
+import twitchpng from './images/Twitch Buds Twitter (1).png'
+import twitterPNG from './images/twitter.png'
+import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed'
 
 export default function Login() {
     const emailRef = useRef()
@@ -51,38 +54,59 @@ export default function Login() {
         history.push('/creator')
     }
 
+    function handleTwitchBuds() {
+        history.push('/help')
+    }
+
 
     return (
-
         <>
         <div className="text-center mt-3 text-white">
         <p>
             <div>
-             <h1 className="mt-3">Welcome to Twitch Buds!</h1>   
+                <img className="Gwardo" height="100" src={twitchpng}></img>
+             <h1 className="mt-3">Welcome to Twitch Buds!</h1>
              <text>
-                We are Next Level Streamer Promotion
+                NEXT LEVEL STREAMER PROMOTION
             </text>
             </div>
             </p>
             
-            <div className="m-1">
-                <Button onClick={handleTwitter}>Follow Our Twitter</Button>
+            <div className="Card">
+                <h3>Our Social Media</h3>
+                <Button className="Card m-1" onClick={handleTwitter}>Twitter</Button>
+                <Button className="Card m-1" onClick={handleDiscord}>Discord</Button>
+                <Button className="Card m-1" onClick={meetCreator}>Creator</Button>
+                <Button className="Card" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>
 
-            <div className="m-1">
-                <Button onClick={handleDiscord}>Join Our Discord</Button>
-            </div>
+        <div className="Card mt-3">
+            <h3>Recent Tweets</h3>
+            <TwitterTimelineEmbed
+              sourceType="profile"
+              // The preferred screen name goes next: 
+              screenName="TwitchBuds"
+              // Style options goes here:
+              options={{ height: 600 }}
+              theme="dark"
+            />
+        </div>
 
-            <div className="m-1">
-                <Button onClick={meetCreator}>Creator</Button>
-            </div>
+        </div>
+
+        <div className="text-center Card mt-3">
+            <h4 className="text-center mb-4">Login to Twitch Buds</h4>
+            <Button onClick={twitterLogin}>
+                <div className="text-center mb-1">
+                    <img src={twitterPNG} height="30"></img>
+                </div>
+                <div className="text-center">
+                    Sign In
+                </div>  
+            </Button>
         </div>
 
         <Card className="Card mt-4" >
-        <h4 className="text-center mb-4">Login with Twitter</h4>
-            <Button onClick={twitterLogin}>
-                Twitter Login
-            </Button>
             <h4 className="text-center mb-4 mt-4">Login with Email</h4>
             <Card.Body>
                 {error && <Alert variant="danger">{error}</Alert>}
