@@ -1,14 +1,15 @@
-import React, { useRef, useState } from 'react'
-import { Form, Button, Card, Alert } from 'react-bootstrap'
-import { Link, useHistory } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
-import { database } from '../firebase'
+import React, { useRef, useState } from 'react';
+import { Form, Button, Card, Alert } from 'react-bootstrap';
+import { Link, useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
+import { database } from '../firebase';
 import './CSS/card.css';
 
 export default function PromotionGiveaway() {
     const { currentUser, email } = useAuth()
     const [loading, setLoading] = useState(false)
     const history = useHistory()
+    const [checkout, setCheckout] = useState(false)
 
     // Information
     const [twittername, setTwittername] = useState("")
@@ -97,6 +98,8 @@ export default function PromotionGiveaway() {
                         {!message &&  <Button disabled={loading} className="w-100" type="submit">Submit Promotion</Button>}
                     </Form>
                 </Card.Body>
+                
+
                 <div>
                     <h5 className="text-center mb-3">Promotion Cost: $50.00</h5>
                 </div>

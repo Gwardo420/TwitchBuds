@@ -7,7 +7,6 @@ import firebase from '../firebase'
 export default function Dashboard() {
     const [promotions, setPromotions] = useState([]);
     const [loading, setLoading] = useState(false);
-
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
     const history = useHistory()
@@ -103,42 +102,44 @@ export default function Dashboard() {
         )}
 
         <div className="Card mt-3">
-            <h3 className="text-center text-white">⬇️ Twitch Buds Station ⬇️</h3>
-            <Card className="SubmitPromo mb-3">
+            <h3 className="text-center text-white">⬇️ Twitch Buds Services ⬇️</h3>
+            <Card className="SubmitPromo mb-3 m-3">
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}
                     
-                    <h3 className="text-center text-white">Use Retweet Picker</h3>
-                    <Link to="/retweet-picker" className="btn btn-primary w-100 mt-3 mb-3">
-                        Retweet Picker
-                    </Link>
-
 
                     {!promotions && (
                         <>
-                            <div className="Card">
-                            <h4 className="text-center mt-3">You have not applied for a promotion yet.</h4>
+                            <div className="PromotionCard mt-3">
+                            <h4 className="text-center mt-3">Run a Promotion!</h4>
                             
-                            <Link to="/setup-promotion" className="btn btn-primary w-100 mt-3 mb-3">
-                                Apply
+                            <Link to="/purchase" className="btn btn-primary w-100 mt-3 mb-3">
+                                Purchase Promotion
                             </Link>
 
                             </div>
                         </>
                     )}
 
+                    <div className="PromotionCard mt-3">
+                        <h3 className="text-center text-white">Use Retweet Picker</h3>
+                        <Link to="/retweet-picker" className=" btn btn-primary w-100 mt-3 mb-3">
+                            Retweet Picker
+                        </Link>
+                    </div>
 
-                    
-                    
-                    <h3 className="mt-3 text-center text-white">Contact Twitch Buds</h3>
-                    <Link to="/contact" className="btn btn-primary w-100 mt-3 mb-3">
-                        Contact Form
-                    </Link>
-                    <div className="text-center text-white">
-                        <h4>Currently signed in as {currentUser.displayName ? <h4>{currentUser.displayName}</h4> : <><h4>{currentUser.email}</h4>
+                    <div className="PromotionCard mt-3">
+                        <h3 className="mt-3 text-center text-white">Contact Twitch Buds</h3>
+                        <Link to="/contact" className="btn btn-primary w-100 mt-3 mb-3">
+                            Contact Form
+                        </Link>
+                    </div>
+
+                    <div className="text-center text-white mt-3">
+                        Currently signed in as {currentUser.displayName ? <h3>{currentUser.displayName}</h3> : <><h3>{currentUser.email}</h3>
                     <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
                         Update Email/Password
-                        </Link></>}</h4>
+                        </Link></>}
                     </div>
                 </Card.Body>
             </Card>
