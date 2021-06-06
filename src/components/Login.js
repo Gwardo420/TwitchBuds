@@ -6,6 +6,7 @@ import './CSS/card.css';
 import twitchpng from './images/Twitch Buds Twitter (1).png'
 import twitterPNG from './images/twitter.png'
 import { TwitterTweetEmbed, TwitterTimelineEmbed, TwitterDMButton } from 'react-twitter-embed'
+import { useCollection } from 'react-firebase-hooks/firestore';
 import { database } from '../firebase';
 
 export default function Login() {
@@ -22,13 +23,17 @@ export default function Login() {
     const [promotions, setPromotions] = useState()
     const history = useHistory()
 
-
     function getPromotions() {
 
         setLoading2(true);
 
-        setLoading2(false)
+        setTimeout(() => {
+            //setPromotions(posts)
+        }, 1000)
 
+        setTimeout(() => {
+            setLoading2(false)
+        }, 2000)
     }
 
     useEffect(() => {
@@ -99,7 +104,6 @@ export default function Login() {
         <div className="text-center mt-3 text-white">
         <p>
             <div>
-                <img className="Gwardo" height="100" src={twitchpng}></img>
                 <h1 className="mt-3">Welcome to Twitch Buds!</h1>
                 <text>
                     NEXT LEVEL STREAMER PROMOTION
@@ -108,12 +112,12 @@ export default function Login() {
             </p>
             
             {currentUser && (
-                    <>
-                        <div className="Card mb-3">
-                            <Button variant="success" className="m-1" onClick={visitDashboard}>Visit Dashboard</Button>
-                            <Button variant="danger" onClick={handleLogout}>Sign Out</Button>
-                        </div>
-                    </>
+                <>
+                    <div className="Card mb-3">
+                        <Button variant="success" className="m-1" onClick={visitDashboard}>Visit Dashboard</Button>
+                        <Button variant="danger" onClick={handleLogout}>Sign Out</Button>
+                    </div>
+                </>
             )}
 
             <div className="Card">
@@ -125,6 +129,9 @@ export default function Login() {
                 <Button className="m-1" onClick={contact}>Contact TwitchBuds</Button>
             </div>
 
+        {loading2 && (
+            <h3 className="Card mt-3">Checking for current promotions</h3>
+        )}
 
         <div className="Card mt-3">
             <h3>Recent Tweets</h3>

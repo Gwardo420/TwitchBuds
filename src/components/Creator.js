@@ -57,10 +57,13 @@ export default function Creator() {
 
         <>
         <div className="PromotionCard text-center">
+
             <Button className="m-1" onClick={dashboard}>Back to Dashboard</Button>    
             <Button className="m-1" onClick={about}>What is Twitch Buds?</Button>   
+
         </div>
         <div className="text-center Card">
+
              <h3 className="mt-3 mb-3">Meet The Creator</h3> 
              
              <div className="mb-3 mt-3">
@@ -86,10 +89,12 @@ export default function Creator() {
         </div>
 
         <div className="PromotionCard text-center">
+
             <Button className="m-1" onClick={cryptoWatchr}>CryptoWatchr</Button>
             <Button className="m-1" onClick={cluChart}>CluChart</Button>
             <Button className="m-1" onClick={cluBot}>CluBot</Button>
             <Button className="m-1" onClick={linkedIn}>LinkedIn</Button>
+            
         </div>
 
         </>

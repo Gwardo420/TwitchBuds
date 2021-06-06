@@ -56,6 +56,14 @@
     background: rgb(255, 123, 0);
 }
 
+.MarginNegative {
+    margin-top: -10%;
+}
+
+.HeaderImage {
+    max-width: 100%;
+}
+
 .FormGroup {
 	margin: 0 15px 20px;
 	padding: 0;

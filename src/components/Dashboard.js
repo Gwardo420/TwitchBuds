@@ -7,6 +7,7 @@ import firebase from '../firebase'
 export default function Dashboard() {
     const [promotions, setPromotions] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [activated, setActivated] = useState(false);
     const [error, setError] = useState('')
     const { currentUser, logout } = useAuth()
     const history = useHistory()
@@ -81,24 +82,24 @@ export default function Dashboard() {
         {promotions && (
             <>                       
             <Card className="PromotionCard mt-3">
-                <h3 className="text-center text-white mt-3">⬇️ Submitted Promotion's ⬇️</h3> 
+                <h3 className="text-center text-white mt-3"> Promotion's Purchased </h3> 
                     <Card.Body>
                     {promotions.map((promos) => (
-                            <div className="Card text-center" id={promos.contactAddress}>
-                                <Card.Title className="d-grid PromotionName Card">
-                                    <h3 className="mt-3">
-                                    <Card.Subtitle className="mb-2 text-white"><h3>{promos.promotionType} Promotion </h3></Card.Subtitle>
-                                    </h3>
+                            <div className="PromotionCard text-center mt-3" id={promos.contactAddress}>
+
+                                <Card.Title className="Card">
+                                    <Card.Subtitle className="mb-2 text-white"><h5>Type: <strong>{promos.promotionType} Promotion </strong></h5></Card.Subtitle>
                                 </Card.Title>
-                                <Card.Title className="d-grid Card">
-                                    <div >
-                                        <h5 className="m-3">Length: </h5>
-                                    </div>
-                                    <p>
-                                    <div>{promos.promoLength} hours</div>
-                                    </p>
+                                
+                                <Card.Title className="Card">
+                                    <h5>Twitch Username: <strong>{promos.twitchUsername}</strong></h5>
                                 </Card.Title>
-                                  <Button  variant="success">Launch Promotion (Coming Soon)</Button>
+                                
+                                <Card.Title className="Card">
+                                    <h5>Time Length: <strong> {promos.promoLength} hours</strong></h5>
+
+                                </Card.Title>
+                                <Button  variant="success">Launch Promotion (Coming Soon)</Button>
                             </div>
                         ))}
                     </Card.Body>
@@ -112,19 +113,13 @@ export default function Dashboard() {
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}
                     
-
-                    {!promotions && (
-                        <>
-                            <div className="PromotionCard mt-3">
-                            <h4 className="text-center mt-3">Run a Promotion!</h4>
-                            
-                            <Link to="/purchase" className="btn btn-primary w-100 mt-3 mb-3">
-                                Purchase Promotion
-                            </Link>
-
-                            </div>
-                        </>
-                    )}
+                    <div className="PromotionCard mt-3">
+                    <h4 className="text-center mt-3">Run a Promotion!</h4>
+                    
+                    <Link to="/purchase" className="btn btn-primary w-100 mt-3 mb-3">
+                        Purchase Promotion
+                    </Link>
+                    </div>
 
                     <div className="PromotionCard mt-3">
                         <h3 className="text-center text-white">Use Retweet Picker</h3>

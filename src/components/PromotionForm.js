@@ -4,6 +4,8 @@ import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { database } from '../firebase';
 import './CSS/card.css';
+import twitchLOGO from './images/twitchLogoGradient.png'
+import twitterLogo from './images/twitter.png'
 
 export default function PromotionGiveaway() {
     const { currentUser, email } = useAuth()
@@ -16,6 +18,8 @@ export default function PromotionGiveaway() {
     const [twitchName, setTwitchName] = useState("")
     const [message, setMessage] = useState("")
     const [promoType, setPromoType] = useState("")
+    const [twitterURL, setTwitterURL] = useState("")
+    const [twitchURL, setTwitchURL] = useState("")
 
     function handleSubmit(e) {
         e.preventDefault()
@@ -34,11 +38,12 @@ export default function PromotionGiveaway() {
             acitvated: "false"
         })
 
-        database.users.doc(currentUser.displayName).add({
+        database.users.add({
             image: currentUser.photoURL,
             twitterUsername: currentUser.displayName,
             promoName: twittername,
-            promoLength: 24
+            promoLength: 24,
+            twitterURL: twitterURL
         })
 
         setTwittername("")
@@ -54,11 +59,11 @@ export default function PromotionGiveaway() {
         <div className="Card">
             <Card className="Card">
                 <Card.Body>
-                    <h2>Submit A Promotion</h2>
+                    <h2 className="text-center">Submit A Promotion</h2>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                         <Form.Label className="mt-3">
-                                Twitter Username
+                                <h4>Twitter Username <img src={twitterLogo} height="30"></img></h4>
                             </Form.Label>
                             <Form.Control
 
@@ -72,7 +77,7 @@ export default function PromotionGiveaway() {
                             </Form.Control>
 
                             <Form.Label className="mt-3"> 
-                                Twitch Username
+                                <h4>Twitch Username <img src={twitchLOGO} height="30"></img></h4>
                             </Form.Label>
                             <Form.Control
 
@@ -83,24 +88,55 @@ export default function PromotionGiveaway() {
                             placeholder="Supply Twitch Name"
 
                             >
-                                
+
                             </Form.Control>
 
-                            <Form.Group>
-                              <Form.Label>Social Promotion</Form.Label>
-                              <Form.Control 
+                            <Form.Label className="mt-3">
+                                <h4>Twitter URL <img src={twitterLogo} height="30"></img></h4>
+                            </Form.Label>
+                            <Form.Control
 
-                                as="select"
-                                value={promoType}
-                                onChange={e => setPromoType(e.target.value)}
-                                placeholder="Promotion Type"
-                                
-                                >
-                                <option>Choose...</option>
-                                <option>Twitch</option>
-                                <option>Twitter</option>
-                              </Form.Control>
-                            </Form.Group>
+                            type="text" 
+                            value={twitterURL}
+                            required
+                            onChange={e => setTwitterURL(e.target.value)}
+                            placeholder="Supply Twitter URL"
+
+                            >
+
+
+                            </Form.Control>
+
+                            <Form.Label className="mt-3">
+                                    <h4>Twitch URL <img src={twitchLOGO} height="30"></img></h4>
+                                </Form.Label>
+                            <Form.Control
+
+                            type="text" 
+                            value={twitchURL}
+                            required
+                            onChange={e => setTwitchURL(e.target.value)}
+                            placeholder="Supply Twitch URL"
+
+                            >
+
+                            </Form.Control>
+
+                            <Form.Label className="mt-3">
+                                <h4>Promotion Selection <img src={twitterLogo} height="30"></img></h4>
+                                </Form.Label>
+                            <Form.Control 
+                              as="select"
+                              value={promoType}
+                              required
+                              onChange={e => setPromoType(e.target.value)}
+                              placeholder="Promotion Type"
+                              
+                              >
+                              <option>Choose...</option>
+                              <option>Twitch</option>
+                              <option>Twitter</option>
+                            </Form.Control>
 
                         </Form.Group>
                         {message && <Alert className="Success text-center text-white mt-3">{message}</Alert>}
