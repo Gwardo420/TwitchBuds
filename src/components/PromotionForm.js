@@ -23,6 +23,8 @@ export default function PromotionGiveaway() {
         setLoading(true)
 
         database.promotion.doc(currentUser.email).collection("submittions").add({
+            image: currentUser.photoURL,
+            twitterUsername: currentUser.displayName,
             promoName: twittername,
             twitchUsername: twitchName,
             promoLength: 24,
@@ -30,6 +32,13 @@ export default function PromotionGiveaway() {
             promotionType: promoType,
             paid: "false",
             acitvated: "false"
+        })
+
+        database.users.doc(currentUser.displayName).add({
+            image: currentUser.photoURL,
+            twitterUsername: currentUser.displayName,
+            promoName: twittername,
+            promoLength: 24
         })
 
         setTwittername("")

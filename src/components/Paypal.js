@@ -27,10 +27,9 @@ export default function Paypal() {
             onApprove: async (data, actions) => {
                 const order = await actions.order.capture()
                 setPurchase(true)
+                
+                history.push('/purchase-success')
 
-                setTimeout(() => {
-                    history.push('/setup-promotion')
-                }, 5000)
             },
             onError: (err) => {
                 console.log(err)

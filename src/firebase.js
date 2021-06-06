@@ -16,7 +16,8 @@ const firestore = app.firestore()
 
 export const database = {
     promotion: firestore.collection('promotions'),
-    contactForms: firestore.collection('contactForms')
+    contactForms: firestore.collection('contactForms'),
+    users: firestore.collection('users')
 }
 
 export const auth2 = firebase.auth()

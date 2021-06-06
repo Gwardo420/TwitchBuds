@@ -58,6 +58,10 @@ export default function Dashboard() {
         history.push('/help')
     }
 
+    async function handleHomepage() {
+        history.push('/login')
+    }
+
     return (
         <>
 
@@ -66,6 +70,7 @@ export default function Dashboard() {
             <img className="Gwardo mt-3" src={currentUser.photoURL}></img>
         
             <div className="mb-3 mt-3">
+                <Button className="m-1" variant="primary" onClick={handleHomepage}>Homepage</Button>
                 <Button className="m-1" variant="danger" onClick={handleLogout}>Log Out</Button>
                 <Button className="m-1" variant="success" onClick={handleSupport}>Support Project</Button>
                 <Button className="m-1" variant="primary" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>

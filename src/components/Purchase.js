@@ -1,12 +1,9 @@
 import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
-import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import './CSS/card.css';
-import gwardo from './images/gwardo.png'
-import discord from './images/discord.png'
-import twitter from './images/twitter.png'
 import Paypal from './Paypal'
+import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed'
 
 export default function Purchase() {
 
@@ -18,6 +15,14 @@ export default function Purchase() {
 
     async function about() {
         history.push('/help')
+    }
+
+    function GotoPromotion1() {
+        window.open('https://twitter.com/TwitchBuds/status/1384855254739693571?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1384855254739693571%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2Flocalhost%3A3000%2Fhelp')
+    }
+
+    function GotoPromotion2() {
+        window.open('https://twitter.com/TwitchBuds/status/1384492299577610240?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1384492299577610240%7Ctwgr%5E%7Ctwcon%5Es1_c10&ref_url=http%3A%2F%2Flocalhost%3A3000%2Fhelp')
     }
 
     return (
@@ -34,12 +39,47 @@ export default function Purchase() {
 
             <h5>Promotions are held on the Twitch Buds Twitter account and will be launched after your payment is cleared.</h5>
             <h5>Twitch Buds will launch your promotion and choose a winner as an incentive to promote your page.</h5>
-            
+
+            <h5>Scroll down to view Promotions Examples</h5>
+
             <h3 className="PromotionCard mt-3 mb-3">
                 Promotion Cost: $50.00
             </h3>
             
             <Paypal />
+            <div className="PromotionCard">
+                           
+                <div className="d-grid justify-content-center align-items-center">
+                    <h3>Promotion Example #1</h3>
+                    <TwitterTweetEmbed 
+                    // Here goes your copied ID.
+                    tweetId={"1384855254739693571"} 
+                    theme="dark"
+                />
+                <Button onClick={GotoPromotion1}>View This Tweet</Button>
+                </div>
+
+                <div className="d-grid justify-content-center align-items-center mt-3">
+                    <h3>Promotion Example #2</h3>
+                    <TwitterTweetEmbed 
+                    // Here goes your copied ID.
+                    tweetId={"1384492299577610240"} 
+                    theme="dark"
+                />
+                <Button onClick={GotoPromotion2}>View This Tweet</Button>
+                </div>
+
+                <div className="mt-3">
+                    <h3>
+                        Your promotion will offer a $25.00 incentive (50% commission) to promote your content. Twitch Buds will run the promotion and choose a winner.
+                    </h3>
+                </div>
+
+                <img></img>
+                <img></img>
+
+            </div>    
+
         </div>
 
         </>

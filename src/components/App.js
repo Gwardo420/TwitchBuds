@@ -9,12 +9,14 @@ import Login from './Login'
 import PrivateRoute from './PrivateRoute'
 import ForgotPassword from './ForgotPassword'
 import UpdateProfile from './UpdateProfile'
-import PromotionGiveaway from './PromotionGiveaway'
+import PromotionForm from './PromotionForm'
 import ContactTwitchBuds from './ContactTwitchBuds'
 import RetweetChecker from './RetweetChecker'
 import Creator from './Creator'
 import Help from './Help'
 import Purchase from './Purchase'
+import Successful from './Successful'
+import PurchaseSuccess from './PurchaseSuccess'
 
 
 function App() {
@@ -28,12 +30,13 @@ function App() {
                 <Router>
                     <AuthProvider>
                         <Switch>
-                            
+                            <PrivateRoute path="/purchase-success" component={PurchaseSuccess} />
+                            <PrivateRoute path="/successful" component={Successful} />
                             <PrivateRoute path="/purchase" component={Purchase} />
                             <PrivateRoute path="/retweet-picker" component={RetweetChecker}/>
                             <PrivateRoute exact path="/" component={Dashboard} />
                             <PrivateRoute path="/update-profile" component={UpdateProfile}/>
-                            <PrivateRoute path="/setup-promotion" component={PromotionGiveaway} />
+                            <PrivateRoute path="/setup-promotion" component={PromotionForm} />
                             <Route path="/contact" component={ContactTwitchBuds} />
                             <Route exact path="/" component={Dashboard} />
                             <Route path="/help" component={Help} />
