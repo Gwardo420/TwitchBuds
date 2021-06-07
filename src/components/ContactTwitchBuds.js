@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react'
 import { Form, Button, Card, Alert } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import { database } from '../firebase'
+import { database, serverTimestamp } from '../firebase'
 import './CSS/card.css';
 
 export default function ContactTwitchBuds() {
@@ -23,7 +23,8 @@ export default function ContactTwitchBuds() {
         setTimeout(() => {
             database.contactForms.doc("Contact").collection("Users Contact").add({
                 question: question,
-                contactAddress: contactEmail
+                contactAddress: contactEmail,
+                createdAt: serverTimestamp()
             })
         }, 2000)
 

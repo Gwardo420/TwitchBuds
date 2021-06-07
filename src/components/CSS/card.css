@@ -11,7 +11,7 @@
 }
 
 .SubmitPromo {
-    border-color: rgb(183, 0, 255);
+    border-color: rgb(130, 0, 182);
     border-style: solid;
     border-width: 5px;
     border-radius: 5px;
@@ -28,7 +28,7 @@
     box-shadow: 0 0 10px black;
     padding: 5px;
     background: linear-gradient(rgb(255, 0, 98), rgb(238, 0, 238));
-    border-radius: 50%;
+    border-radius: 30%;
 }
 
 .Success {
@@ -36,12 +36,14 @@
 }
 
 .PromotionCard {
+    text-shadow: 0 0 10px black;
     color: white;
     box-shadow: 0 0 10px black;
     background: linear-gradient(rgb(255, 0, 98), rgb(238, 0, 238));
     margin-top: 2%;
     margin-bottom: 2%;
     padding: 2%;
+    border-radius: 5px;
 }
 
 .CardTitle {
@@ -62,8 +64,12 @@
 
 .HeaderImage {
     width: 100%;
-    position: center;
-    max-height: 50vh;
+    margin-top: -2%;
+    margin-bottom: 10%;
+    min-height: 11vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .FormGroup {

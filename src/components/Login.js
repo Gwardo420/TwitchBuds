@@ -78,10 +78,6 @@ export default function Login() {
         history.push('/creator')
     }
 
-    function handleTwitchBuds() {
-        history.push('/help')
-    }
-
     function contact() {
         history.push('/contact')
     }
@@ -99,6 +95,10 @@ export default function Login() {
         }
     }
 
+    function handleWorks() {
+        history.push('/help')
+    }
+
     return (
         <>
         <div className="text-center mt-3 text-white">
@@ -114,23 +114,47 @@ export default function Login() {
             {currentUser && (
                 <>
                     <div className="Card mb-3">
-                        <Button variant="success" className="m-1" onClick={visitDashboard}>Visit Dashboard</Button>
-                        <Button variant="danger" onClick={handleLogout}>Sign Out</Button>
+                        <h5>Welcome, {currentUser.displayName}!</h5>
+                        <Button variant="info" className="m-1" onClick={visitDashboard}>Visit Dashboard</Button>
+                        <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
                     </div>
                 </>
             )}
 
-            <div className="Card">
+            {!currentUser && (
+                <div className="text-center Card mt-3 mb-3">
+                    <h4 className="text-center mb-4">Login to Twitch Buds</h4>
+                    <Button variant="primary" className="w-100" block onClick={twitterLogin}>
+                        <div className="text-center mb-1">
+                            <img src={twitterPNG} height="30"></img>
+                        </div>
+                        <div className="text-center">
+                            Sign In
+                        </div>  
+                    </Button>
+                </div>
+            )}
+
+
+            <div className="PromotionCard mt-3">
                 <h3>Our Social Media</h3>
-                <Button className="m-1" onClick={handleTwitter}>Twitter</Button>
-                <Button className="m-1" onClick={handleDiscord}>Discord</Button>
-                <Button className="m-1" onClick={meetCreator}>Creator</Button>
-                <Button className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
-                <Button className="m-1" onClick={contact}>Contact TwitchBuds</Button>
+                <Button variant="info" className="m-1" onClick={handleTwitter}>Twitter</Button>
+                <Button variant="info" className="m-1" onClick={handleDiscord}>Discord</Button>
+                <Button variant="info" className="m-1" onClick={meetCreator}>Creator</Button>
+            </div>
+
+            <div className="PromotionCard mt-3">
+                <h3>Contact Us Directly</h3>
+                <Button variant="info" className="m-1" onClick={contact}>Contact TwitchBuds</Button>
+            </div>
+
+            <div className="PromotionCard mt-3">
+                <h3>See how this works</h3>
+                <Button variant="info" className="m-1" onClick={handleWorks}>Take a tour!</Button>
             </div>
 
         {loading2 && (
-            <h3 className="Card mt-3">Checking for current promotions</h3>
+            <h3 className="Card mt-3">Loading current promotions...</h3>
         )}
 
         <div className="Card mt-3">
@@ -149,17 +173,6 @@ export default function Login() {
 
         {!currentUser && (
                 <>
-                <div className="text-center Card mt-3">
-                    <h4 className="text-center mb-4">Login to Twitch Buds</h4>
-                    <Button onClick={twitterLogin}>
-                        <div className="text-center mb-1">
-                            <img src={twitterPNG} height="30"></img>
-                        </div>
-                        <div className="text-center">
-                            Sign In
-                        </div>  
-                    </Button>
-                </div>
 
                 <Card className="Card mt-4" >
                     <h4 className="text-center mb-4 mt-4">Login with Email</h4>
@@ -194,9 +207,9 @@ export default function Login() {
             )}
 
 
-        <div className="Card text-center mt-3">
+        <div className="Card text-center mt-3 mb-3">
             <h3>Twitch Buds Channel</h3>
-            <iframe src="https://player.twitch.tv/?channel=twitchbuds&parent=http://www.twitchbuds.com" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+            <iframe src="https://player.twitch.tv/?channel=twitchbuds&parent=https://www.twitchbuds.com/login" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
         </div>
         </>
     )

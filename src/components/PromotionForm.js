@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Form, Button, Card, Alert } from 'react-bootstrap';
 import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { database } from '../firebase';
+import { database, serverTimestamp } from '../firebase';
 import './CSS/card.css';
 import twitchLOGO from './images/twitchLogoGradient.png'
 import twitterLogo from './images/twitter.png'
@@ -35,7 +35,8 @@ export default function PromotionGiveaway() {
             userEmail: currentUser.email,
             promotionType: promoType,
             paid: "false",
-            acitvated: "false"
+            acitvated: "false",
+            createdAt: serverTimestamp()
         })
 
         database.users.add({
@@ -43,7 +44,8 @@ export default function PromotionGiveaway() {
             twitterUsername: currentUser.displayName,
             promoName: twittername,
             promoLength: 24,
-            twitterURL: twitterURL
+            twitterURL: twitterURL,
+            createdAt: serverTimestamp()
         })
 
         setTwittername("")

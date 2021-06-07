@@ -9,6 +9,7 @@ export default function Dashboard() {
     const [loading, setLoading] = useState(false);
     const [activated, setActivated] = useState(false);
     const [error, setError] = useState('')
+    const [viewPromotions, setviewPromotions] = useState(false)
     const { currentUser, logout } = useAuth()
     const history = useHistory()
 
@@ -35,7 +36,7 @@ export default function Dashboard() {
         getPromotions()
     }, [])
 
-    
+
     if(loading) {
         return <h3>Loading your dashboard!</h3>;
     }
@@ -51,6 +52,14 @@ export default function Dashboard() {
         }
     }
 
+    function setPromotionsFunction() {
+        setviewPromotions(true)
+    }
+
+    function hidePromotions() {
+        setviewPromotions(false)
+    }
+
     function handleSupport() {
         window.open("https://cash.app/$Twitchbuds")
     }
@@ -63,76 +72,101 @@ export default function Dashboard() {
         history.push('/login')
     }
 
+    function handlePurchase() {
+        history.push('/purchase')
+    }
+
+    function handleRetweetPicker() {
+        history.push('/retweet-picker')
+    }
+
+    function handleContactForm() {
+        history.push('/contact')
+    }
+
     return (
         <>
 
-        <div className="Card mt-3 text-center">
-            <h3>{currentUser.displayName ? <h3>{currentUser.displayName}</h3> : <h3>Signed in with Email {currentUser.email}</h3>}</h3>
-            <img className="Gwardo mt-3" src={currentUser.photoURL}></img>
+        <div className="Card mt-1 text-center">
+        <img className="Gwardo mt-1" src={currentUser.photoURL}></img>
+            <h3>{currentUser.displayName ? <h3>User: {currentUser.displayName}</h3> : <h3>Signed in with Email {currentUser.email}</h3>}</h3>
+            
         
-            <div className="mb-3 mt-3">
-                <Button className="m-1" variant="primary" onClick={handleHomepage}>Homepage</Button>
-                <Button className="m-1" variant="danger" onClick={handleLogout}>Log Out</Button>
-                <Button className="m-1" variant="success" onClick={handleSupport}>Support Project</Button>
-                <Button className="m-1" variant="primary" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
+            <div className="mb-1 mt-1">
+                <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
+                <Button variant="info" className="m-1" onClick={handleLogout}>Log Out</Button>
+                <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
+                <Button variant="info" className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>   
 
         </div>
 
         {promotions && (
-            <>                       
-            <Card className="PromotionCard mt-3">
-                <h3 className="text-center text-white mt-3"> Promotion's Purchased </h3> 
-                    <Card.Body>
-                    {promotions.map((promos) => (
-                            <div className="PromotionCard text-center mt-3" id={promos.contactAddress}>
+            <>          
+                {!viewPromotions && (
+                    <>
+                    <div className="Card text-center mt-3">
+                        <h3>See your promotions</h3>
+                        <Button className="" onClick={setPromotionsFunction}>View your promotions</Button>  
+                    </div>  
+                </>
+                )}    
 
+                {viewPromotions && (
+                    <>
+                    <h5 className="text-center text-white mt-3"> Promotion's Purchased </h5>     
+
+                    <div className="Card text-center">
+                    <Button onClick={hidePromotions}>Hide Promotion's</Button>    
+                        {promotions.map((promos) => (
+                            <Card className="PromotionCard text-center mt-3" id={promos.contactAddress}>
                                 <Card.Title className="Card">
                                     <Card.Subtitle className="mb-2 text-white"><h5>Type: <strong>{promos.promotionType} Promotion </strong></h5></Card.Subtitle>
                                 </Card.Title>
-                                
+
                                 <Card.Title className="Card">
                                     <h5>Twitch Username: <strong>{promos.twitchUsername}</strong></h5>
                                 </Card.Title>
-                                
+
                                 <Card.Title className="Card">
                                     <h5>Time Length: <strong> {promos.promoLength} hours</strong></h5>
-
                                 </Card.Title>
                                 <Button  variant="success">Launch Promotion (Coming Soon)</Button>
-                            </div>
+                            </Card>
                         ))}
-                    </Card.Body>
-                </Card>
+                    </div>
+                    </>
+                )}
+
             </>
         )}
 
+        
+        <div className="mb-3 mt-3 Card">
+            <h5 className="text-center">Please Note</h5>
+            <div className="text-center">Promotional spots are held on the Twitch Buds Twitter account.</div>
+            <div className="text-center mt-3">These spots offer an incentive reward for the community engaging in your content.</div>
+        </div>
+
         <div className="Card mt-3">
-            <h3 className="text-center text-white">⬇️ Twitch Buds Services ⬇️</h3>
+            <h3 className="text-center text-white">Purchased Promotions</h3>
             <Card className="SubmitPromo mb-3 m-3">
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}
                     
-                    <div className="PromotionCard mt-3">
+                    <div className="PromotionCard mt-3 text-center">
                     <h4 className="text-center mt-3">Run a Promotion!</h4>
-                    
-                    <Link to="/purchase" className="btn btn-primary w-100 mt-3 mb-3">
-                        Purchase Promotion
-                    </Link>
+                    <Button variant="info" onClick={handlePurchase}>Purchase Promotion</Button>
                     </div>
 
-                    <div className="PromotionCard mt-3">
+                    <div className="PromotionCard mt-3 text-center">
                         <h3 className="text-center text-white">Use Retweet Picker</h3>
-                        <Link to="/retweet-picker" className=" btn btn-primary w-100 mt-3 mb-3">
-                            Retweet Picker
-                        </Link>
+                        <Button variant="info" onClick={handleRetweetPicker}>Retweet Picker</Button>
                     </div>
 
-                    <div className="PromotionCard mt-3">
+                    <div className="PromotionCard mt-3 text-center">
                         <h3 className="mt-3 text-center text-white">Contact Twitch Buds</h3>
-                        <Link to="/contact" className="btn btn-primary w-100 mt-3 mb-3">
-                            Contact Form
-                        </Link>
+                        <Button variant="info" onClick={handleContactForm}>Contact Us</Button>
                     </div>
 
                     <div className="text-center text-white mt-3">
@@ -143,12 +177,6 @@ export default function Dashboard() {
                     </div>
                 </Card.Body>
             </Card>
-        </div>
-
-        <div className="mb-3 mt-3 Card">
-            <h4 className="text-center">Please Note:</h4>
-            <h3 className="text-center">Promotional spots are held on the Twitch Buds Twitter account.</h3>
-            <h3 className="text-center mt-3">These spots offer an incentive reward for the community engaging in your content.</h3>
         </div>
 
     </>

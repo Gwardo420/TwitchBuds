@@ -20,6 +20,7 @@ export const database = {
     users: firestore.collection('users')
 }
 
+export const serverTimestamp = firebase.firestore.FieldValue.serverTimestamp;
 export const auth2 = firebase.auth()
 export const auth = app.auth()
 export default app

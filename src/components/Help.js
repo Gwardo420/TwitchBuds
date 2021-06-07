@@ -40,8 +40,6 @@ export default function Help() {
         <>
         <div className="text-center mt-3 text-white">
             
-
-            <img className="Gwardo" height="100" src={twitchpng}></img>
             <h1 className="mt-3">Simple Streamer Promotion</h1>
             <div className="PromotionCard">
                 <Button className="m-1" onClick={handleSumbit}>Return To Dashboard</Button>
@@ -51,24 +49,43 @@ export default function Help() {
 
             <div className="Card mt-3 mb-3">
                 <h3 className='mt-3'>
-                    How does this work?
+                    Our Goal
                 </h3>
 
-                <div className="text-white text-center mb-3">
-                    Twitch Buds was created by Gwardo420 to help streamers around the world promote their content on a different level than usual. While keeping the small streamer in mind, Twitch Buds offers promotional spots on Twitter to help increase your exposure.
-                </div>
+                <h5 className="text-white text-center mb-3">
+                   Simple Streamer Promotions
+                </h5>
              </div>
 
              <div className="Card mt-3 mb-3 text-center">
                 <h3 className='mt-3'>
-                    Promotional Examples
+                    Twitch Buds Promotion Guide
                 </h3>
 
+                <div>(More screenshots are coming soon)</div>
+
+                <div className="PromotionCard">
+                    <h5>1. Sign-In With Twitter</h5>
+                    <div>This just takes a few seconds. The account that you sign in with will be the account that is promoted.</div>
+                </div>
+
+                <div className="PromotionCard">
+                    <h5>2. Apply for Promotion</h5>
+                    <div>In your dashboard you can apply for a promotional spot on Twitch Buds Twitter account.</div>
+                </div>
+
+                <div className="PromotionCard">
+                    <h5>3. Run Promotion</h5>
+                    <div>Specify when you would like your promotion to run. Twitch Buds will handle running your promotion at your specified time.</div>
+                </div>
+
+                <div className="PromotionCard">
+                    <h5>4. Gain Exposure</h5>
+                    <div>After your promotion is ran, you can just sit back and let Twitch Buds handle the rest.</div>
+                </div>
+
                 <div>
-                    These are a couple examples of Twitch Buds promotional spots that we offer you. Instead of "Must be following @TwitchBuds" it will be your username. 
-                    <p>These promotions help you grow your community while giving back at the same time.</p>
-                    <p>The incentive for your promotion spot will be 50% of the promotional cost.</p>
-                    <p>Twitch Buds will handle everything from choosing a winner to paying out the winner after your promotion has ended.</p>
+                    See Example Promotions
                 </div>
 
                 <div className="d-grid justify-content-center align-items-center">
@@ -92,17 +109,6 @@ export default function Help() {
                 </div>
 
                 </div>
-
-                
-            <div className="Card mt-3 mb-3">
-                <h3 className='mt-3'>
-                    How-To Apply
-                </h3>
-
-                <div className="text-white text-center mb-3">
-                    You can return to your Dashboard and click "Apply for Promotion" this will give you a form to enter your promotion credentials. 
-                </div>
-             </div>
 
 
             <div className="PromotionCard mb-3">

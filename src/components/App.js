@@ -17,15 +17,14 @@ import Help from './Help'
 import Purchase from './Purchase'
 import Successful from './Successful'
 import PurchaseSuccess from './PurchaseSuccess'
-import TwitterPngHeader from './images/Twitch Buds Header.png'
-
+import TwitchBudsHeader from './images/header.png'
 
 function App() {
     return (
         <>
         <div className="Background">
             
-        <img className="HeaderImage" src={TwitterPngHeader}></img>
+        <img className="HeaderImage" src={TwitchBudsHeader}></img>
         
         <Container className="d-flex align-items-center justify-content-center" style={{  minHeight: "100vh" }}>
                 
