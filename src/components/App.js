@@ -1,6 +1,5 @@
 import React from 'react'
 import Signup from './Signup'
-import { ToastContainer, toast } from 'react-toastify';
 import { Container } from 'react-bootstrap'
 import { AuthProvider } from '../contexts/AuthContext'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -18,6 +17,7 @@ import Purchase from './Purchase'
 import Successful from './Successful'
 import PurchaseSuccess from './PurchaseSuccess'
 import TwitchBudsHeader from './images/header.png'
+import toast, { Toaster } from 'react-hot-toast';
 
 function App() {
     return (
@@ -29,6 +29,7 @@ function App() {
         <Container className="d-flex align-items-center justify-content-center" style={{  minHeight: "100vh" }}>
                 
             <div className="w-100 MarginNegative" style={{ maxWidth: "600px"}}>
+            <Toaster />
                 <Router>
                     <AuthProvider>
                         <Switch>
@@ -46,7 +47,6 @@ function App() {
                             <Route path="/signup" component={Signup} />
                             <Route path="/login" component={Login} />
                             <Route path="/forgot-password" component={ForgotPassword} />
-
                         </Switch>
                     </AuthProvider>
                 </Router>

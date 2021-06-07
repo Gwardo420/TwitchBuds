@@ -14,6 +14,7 @@ export default function RetweetChecker() {
     const [disabled, setDisabled] = useState(false)
     const [tweet, setTweet] = useState("")
     const [winner, setWinner] = useState("")
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -23,6 +24,10 @@ export default function RetweetChecker() {
 
         setLoading(true)
         setDisabled(true)
+    }
+
+    function handleDashboard() {
+        history.push('/')
     }
 
     //{!loading && (
@@ -39,8 +44,8 @@ export default function RetweetChecker() {
             <Card className="Card">
                 <Card.Body>
                     <h2>Twitch Buds Retweet Picker</h2>
-                    <h2>Coming Soon!</h2>
-                    <Form onSubmit={handleSubmit}>
+                    <h5 className="PromotionCard">This feature is coming very soon!</h5>
+                    <Form className="PromotionCard" onSubmit={handleSubmit}>
                         <Form.Group>
                             <Form.Label className="mt-3">
                                 Tweet ID
@@ -63,12 +68,11 @@ export default function RetweetChecker() {
 
                     </Form>
                 </Card.Body>
-                <div className="">
-                <h3 className="text-center">Back to Dashboard</h3>
-                <Link to="/" className="btn btn-primary w-100 mt-3">
-                        Dashboard
-                    </Link>
+
+                <div className="text-center">
+                    <Button onClick={handleDashboard}>Return To Dashboard</Button>
                 </div>
+            
             </Card>
         </div>
         </>

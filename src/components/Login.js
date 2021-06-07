@@ -8,6 +8,7 @@ import twitterPNG from './images/twitter.png'
 import { TwitterTweetEmbed, TwitterTimelineEmbed, TwitterDMButton } from 'react-twitter-embed'
 import { useCollection } from 'react-firebase-hooks/firestore';
 import { database } from '../firebase';
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Login() {
     const emailRef = useRef()
@@ -22,6 +23,8 @@ export default function Login() {
     const [loading2, setLoading2] = useState(false)
     const [promotions, setPromotions] = useState()
     const history = useHistory()
+
+    const notify = () => toast('Signing you in...');
 
     function getPromotions() {
 
@@ -48,7 +51,8 @@ export default function Login() {
             setError('')
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-        
+            notify()
+
         } catch {
         
             setError('Failed to log in')
@@ -60,10 +64,17 @@ export default function Login() {
     }
 
     async function twitterLogin() {
+
+        
+        toast('Signing you in!', {
+            icon: '👏',
+        });
+
         setError('')
         setLoading(true)
         await twitter()
         history.push('/successful')
+        
     }
 
     function handleTwitter() {
@@ -89,6 +100,11 @@ export default function Login() {
     async function handleLogout() {
         try{
             await logout()
+
+            toast('You signed out!', {
+                icon: '👏',
+            });
+
             history.push('/login')
         } catch(err) {
             console.log(err)

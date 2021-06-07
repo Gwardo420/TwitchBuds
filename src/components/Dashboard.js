@@ -3,6 +3,7 @@ import { Card, Button, Alert, Container } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 import firebase from '../firebase'
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Dashboard() {
     const [promotions, setPromotions] = useState([]);
@@ -46,6 +47,12 @@ export default function Dashboard() {
 
         try{
             await logout()
+
+            
+            toast('You signed out!', {
+                icon: '👏',
+            });
+
             history.push('/login')
         } catch {
             setError('Failed to log out')
@@ -65,6 +72,11 @@ export default function Dashboard() {
     }
 
     async function handleTwitchBuds() {
+
+        toast('We are next level streamer promotion!', {
+            icon: '💻',
+        });
+
         history.push('/help')
     }
 
@@ -73,6 +85,11 @@ export default function Dashboard() {
     }
 
     function handlePurchase() {
+
+        toast('One step closer to promotion!', {
+            icon: '💜',
+        });
+
         history.push('/purchase')
     }
 
@@ -94,7 +111,7 @@ export default function Dashboard() {
         
             <div className="mb-1 mt-1">
                 <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
-                <Button variant="info" className="m-1" onClick={handleLogout}>Log Out</Button>
+                <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
                 <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
                 <Button variant="info" className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>   
