@@ -1,23 +1,24 @@
-import React from 'react'
-import Signup from './Signup'
-import { Container } from 'react-bootstrap'
-import { AuthProvider } from '../contexts/AuthContext'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Dashboard from './Dashboard'
-import Login from './Login'
-import PrivateRoute from './PrivateRoute'
-import ForgotPassword from './ForgotPassword'
-import UpdateProfile from './UpdateProfile'
-import PromotionForm from './PromotionForm'
-import ContactTwitchBuds from './ContactTwitchBuds'
-import RetweetChecker from './RetweetChecker'
-import Creator from './Creator'
-import Help from './Help'
-import Purchase from './Purchase'
-import Successful from './Successful'
-import PurchaseSuccess from './PurchaseSuccess'
-import TwitchBudsHeader from './images/header.png'
+import React from 'react';
+import Signup from './Signup';
+import { Container } from 'react-bootstrap';
+import { AuthProvider } from '../contexts/AuthContext';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Dashboard from './Dashboard';
+import Login from './Login';
+import PrivateRoute from './PrivateRoute';
+import ForgotPassword from './ForgotPassword';
+import UpdateProfile from './UpdateProfile';
+import PromotionForm from './PromotionForm';
+import ContactTwitchBuds from './ContactTwitchBuds';
+import RetweetChecker from './RetweetChecker';
+import Creator from './Creator';
+import Help from './Help';
+import Purchase from './Purchase';
+import Successful from './Successful';
+import PurchaseSuccess from './PurchaseSuccess';
+import TwitchBudsHeader from './images/header.png';
 import toast, { Toaster } from 'react-hot-toast';
+import ScrollToTop from './ScrollToTop';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
             <div className="w-100 MarginNegative" style={{ maxWidth: "600px"}}>
             <Toaster />
                 <Router>
+                    <ScrollToTop />
                     <AuthProvider>
                         <Switch>
                             <PrivateRoute path="/purchase-success" component={PurchaseSuccess} />
