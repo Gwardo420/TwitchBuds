@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/static/css/main.31886ad2.chunk.css",
-    "main.js": "/static/js/main.721addc9.chunk.js",
-    "main.js.map": "/static/js/main.721addc9.chunk.js.map",
+    "main.js": "/static/js/main.6152380a.chunk.js",
+    "main.js.map": "/static/js/main.6152380a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.f8bdfd8c.js",
     "runtime-main.js.map": "/static/js/runtime-main.f8bdfd8c.js.map",
     "static/css/2.61b4cb56.chunk.css": "/static/css/2.61b4cb56.chunk.css",
-    "static/js/2.270181d5.chunk.js": "/static/js/2.270181d5.chunk.js",
-    "static/js/2.270181d5.chunk.js.map": "/static/js/2.270181d5.chunk.js.map",
+    "static/js/2.1c495fed.chunk.js": "/static/js/2.1c495fed.chunk.js",
+    "static/js/2.1c495fed.chunk.js.map": "/static/js/2.1c495fed.chunk.js.map",
     "static/js/3.2e03ef55.chunk.js": "/static/js/3.2e03ef55.chunk.js",
     "static/js/3.2e03ef55.chunk.js.map": "/static/js/3.2e03ef55.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.61b4cb56.chunk.css.map": "/static/css/2.61b4cb56.chunk.css.map",
     "static/css/main.31886ad2.chunk.css.map": "/static/css/main.31886ad2.chunk.css.map",
-    "static/js/2.270181d5.chunk.js.LICENSE.txt": "/static/js/2.270181d5.chunk.js.LICENSE.txt",
+    "static/js/2.1c495fed.chunk.js.LICENSE.txt": "/static/js/2.1c495fed.chunk.js.LICENSE.txt",
     "static/media/Twitch Buds Twitter (1).407e849f.png": "/static/media/Twitch Buds Twitter (1).407e849f.png",
     "static/media/gwardo.f75ba053.png": "/static/media/gwardo.f75ba053.png",
     "static/media/header.1f60c0e6.png": "/static/media/header.1f60c0e6.png",
@@ -24,8 +24,8 @@
   "entrypoints": [
     "static/js/runtime-main.f8bdfd8c.js",
     "static/css/2.61b4cb56.chunk.css",
-    "static/js/2.270181d5.chunk.js",
+    "static/js/2.1c495fed.chunk.js",
     "static/css/main.31886ad2.chunk.css",
-    "static/js/main.721addc9.chunk.js"
+    "static/js/main.6152380a.chunk.js"
   ]
 }
