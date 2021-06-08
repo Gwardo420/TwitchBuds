@@ -105,7 +105,7 @@ export default function Dashboard() {
         <>
 
         <div className="Card mt-1 text-center">
-        <img className="Gwardo mt-1" src={currentUser.photoURL}></img>
+        <img className="Gwardo mt-1" src={currentUser.photoURL ? `${currentUser.photoURL}` : `https://wretched.org/wp-content/uploads/2017/09/Anon-profile.png`}></img>
             <h3>{currentUser.displayName ? <h3>User: {currentUser.displayName}</h3> : <h3>Signed in with Email {currentUser.email}</h3>}</h3>
             
         
