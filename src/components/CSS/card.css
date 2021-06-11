@@ -10,6 +10,23 @@
     border-color: rgb(183, 0, 255);
 }
 
+.CardInfo {
+
+    text-shadow: 0 0 10px black;
+    color: white;
+    background: linear-gradient(to right, purple, magenta);
+    padding: 1.5rem;
+    border-radius: 10px;
+
+}
+
+.DashboardPicture {
+    background: linear-gradient(to right, green, lime);
+    border-radius: 50%;
+    box-shadow: 0 0 10px black;
+    padding: 0.2rem;
+}
+
 .SubmitPromo {
     border-color: rgb(130, 0, 182);
     border-style: solid;

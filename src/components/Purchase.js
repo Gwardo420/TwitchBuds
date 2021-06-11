@@ -37,10 +37,12 @@ export default function Purchase() {
         <div className="Card text-center">
             <h3 className="PromotionCard">Purchase a Promotion</h3>
 
-            <div>Promotions are held on the Twitch Buds Twitter account and will be launched after your payment is cleared.</div>
-            <div>Twitch Buds will launch your promotion and choose a winner as an incentive to promote your page.</div>
-
-            <div>Scroll down to view Promotions Examples</div>
+            <div className="Card mt-3 mb-3">
+                    <h5>
+                        Twitch Buds will run a $25 giveaway to promote the page that you supply. 
+                    </h5>
+                </div>
+            <div className="Card">You can see examples down below!</div>
 
             <h3 className="PromotionCard mt-3 mb-3">
                 Promotion Cost: $50.00
@@ -67,12 +69,6 @@ export default function Purchase() {
                     theme="dark"
                 />
                 <Button onClick={GotoPromotion2}>View This Tweet</Button>
-                </div>
-
-                <div className="mt-3">
-                    <text>
-                        Your promotion will offer a $25.00 incentive (50% commission) to promote your content. Twitch Buds will run the promotion and choose a winner.
-                    </text>
                 </div>
 
                 <img></img>

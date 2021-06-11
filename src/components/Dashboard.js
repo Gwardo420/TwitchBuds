@@ -101,15 +101,21 @@ export default function Dashboard() {
         history.push('/contact')
     }
 
+    console.log(currentUser)
+
     return (
         <>
 
-        <div className="Card mt-1 text-center">
-        <img className="Gwardo mt-1" src={currentUser.photoURL ? `${currentUser.photoURL}` : `https://wretched.org/wp-content/uploads/2017/09/Anon-profile.png`}></img>
-            <h3>{currentUser.displayName ? <h3>User: {currentUser.displayName}</h3> : <h3>Signed in with Email {currentUser.email}</h3>}</h3>
+        <div className="CardInfo mt-1 text-center">
+        <img className="DashboardPicture mt-1" src={currentUser.photoURL}></img>
+            <h5 className="mt-3 mb-3">{currentUser.displayName ? <h5>Welcome to your Dashboard <p>{currentUser.displayName}</p></h5> : <h5>Signed in with Email {currentUser.email}</h5>}</h5>
             
-        
-            <div className="mb-1 mt-1">
+            <div className="Card mt-3">
+                <h5>Account Email:</h5>
+                <div className="text-center">{currentUser.displayName ? <div>{currentUser.email}</div> : <div>{currentUser.email1}</div>}</div>
+            </div>
+
+            <div className="Card mb-3 mt-3">
                 <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
                 <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
                 <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
