@@ -225,7 +225,7 @@ export default function Login() {
 
         <div className="Card text-center mt-3 mb-3">
             <h3>Twitch Buds Channel</h3>
-            <iframe src="https://player.twitch.tv/?channel=twitchbuds&parent=https://www.twitchbuds.com/login" frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
+            <iframe src={"https://player.twitch.tv/?channel=twitchbuds&parent=https://www.twitchbuds.com/login"} frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
         </div>
         </>
     )
