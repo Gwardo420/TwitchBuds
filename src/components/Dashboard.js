@@ -101,8 +101,6 @@ export default function Dashboard() {
         history.push('/contact')
     }
 
-    console.log(currentUser)
-
     return (
         <>
 
