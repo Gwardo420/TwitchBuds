@@ -9,7 +9,7 @@
   <p align="center">
     Start growing your community with TwitchBuds today!
     <br/>
-    <a href="www.twitchbuds.com">Visit TwitchBuds Website</a>
+    <a href="https://www.twitchbuds.com">Visit TwitchBuds Website</a>
   </p>
 </p>
 
