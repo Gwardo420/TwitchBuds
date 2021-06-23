@@ -147,85 +147,49 @@ export default function Login() {
         <p>
             <div>
                 <div className="mt-3">
-                <Button variant="info" className="m-1" onClick={handleTwitter}>Twitter</Button>
-                <Button variant="info" className="m-1" onClick={handleDiscord}>Discord</Button>
-                <Button variant="info" className="m-1" onClick={meetCreator}>Creator</Button>
-                <Button variant="info" className="m-1" onClick={contact}>Contact TwitchBuds</Button>
-                <Button variant="info" className="m-1" onClick={handleWorks}>Take a tour!</Button>
+                <Button variant="info" className="m-1 ButtonShadow" onClick={handleTwitter}>Twitter</Button>
+                <Button variant="info" className="m-1 ButtonShadow" onClick={handleDiscord}>Discord</Button>
+                <Button variant="info" className="m-1 ButtonShadow" onClick={meetCreator}>Creator</Button>
+                <Button variant="info" className="m-1 ButtonShadow" onClick={contact}>Contact TwitchBuds</Button>
+                <Button variant="info" className="m-1 ButtonShadow" onClick={handleWorks}>Take a tour!</Button>
                 </div>
 
-            {!currentUser && (
-                <div className="mt-3 m-3">
-                    <Button variant="success" size="sm" className="w-50" onClick={twitterLogin}>
-                        <div className="text-center mb-1">
-                            <img src={twitterPNG} height="30"></img>
-                        </div>
-                        <div className="text-center">
-                            Sign In
-                        </div>  
-                    </Button>
-                </div>
-            )}
-
-            <div>
-                {authError && (
-                    <div>{authError}</div>
+                {!currentUser && (
+                    <div className="mt-3 m-3">
+                        <Button variant="success" size="sm" className="w-50 ButtonShadow" onClick={twitterLogin}>
+                            <div className="text-center mb-1">
+                                <img src={twitterPNG} height="30"></img>
+                            </div>
+                            <div className="text-center">
+                                Sign In With Twitter
+                            </div>  
+                        </Button>
+                    </div>
                 )}
-            <Button onClick={handlePurchase}>Purchase Promotion</Button>
-            </div>
 
-
+                <div>
+                    {authError && (
+                        <div>{authError}</div>
+                    )}
+                <Button className="ButtonShadow mt-3" onClick={handlePurchase}>Purchase A Promotion</Button>
+                </div>
             </div>
         </p>
             
         {currentUser && (
             <>
                 <div className="Card mb-3">
-                    <h5>Welcome, {currentUser.displayName}!</h5>
+                    <h5>Welcome, {currentUser.displayName || currentUser.email}!</h5>
                     
-                    <div className="Description">
+                    <div className="Description m-3">
                         <text>
                             Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
                         </text>
                     </div>
 
-                    <Button variant="info" className="m-1 LoginHeader text-white" onClick={visitDashboard}>Visit Dashboard</Button>
-                    <Button variant="info" className="m-1 LoginHeader text-white" onClick={handleLogout}>Sign Out</Button>
+                    <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={visitDashboard}>Visit Dashboard</Button>
+                    <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={handleLogout}>Sign Out</Button>
                 </div>
-            </>
-        )}
-
-        {currentUser && (
-            <>
-            <h3>Top Supporters</h3>
-
-            <div className="d-flex m-1">
-
-                <Card className="Card m-2" style={{ width: '18rem' }}>
-                <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
-                  <Card.Body>
-                    <Card.Title>Gwardo420</Card.Title>
-                    <Card.Text className="Card">
-                        <div>
-                            <h5>TwitchBuds Creator</h5>
-                        </div>
-                    Software Developer that loves to pay it forward. Creator of TwitchBuds & CryptoWatchr.
-                    </Card.Text>
-                    <Button className="LoginHeader" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
-                  </Card.Body>
-                </Card>
-
-                <Card className="Card m-2" style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
-                  <Card.Body>
-                    <Card.Title>DNP3</Card.Title>
-                    <Card.Text className="Card">
-                    Computer Engineer who does insane giveaways. Often referred to as the "Oprah" of Twitch {'&'} Twitter.
-                    </Card.Text>
-                    <Button variant="primary" className="LoginHeader" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
-                  </Card.Body>
-                </Card>
-            </div>
             </>
         )}
 
@@ -241,6 +205,60 @@ export default function Login() {
             </div>
         )}
 
+        <div className="SimplePromotions">
+            <video className="mt-4 SimplePromotionsVideo" src="https://i.imgur.com/rRzU6tk.mp4" width="100%" autoPlay loop></video>
+        <div className="Title mt-3 text-center m-2 ">
+            <h4>Simple Promotions</h4>
+            <h4 className="mt-3">
+                1. Sign-In
+            </h4>
+
+            <h4 className="mt-3">
+                2. Purchase a Promotion Slot
+            </h4>
+
+            <h4 className="mt-3">
+                3. Expand Community Engagement
+            </h4>
+        </div>
+        </div>
+
+
+        {currentUser && (
+            <>
+            <h3>Top Supporters</h3>
+
+            <div className="d-flex m-1">
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                <Card.Img variant="top" className="Card" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>Gwardo420</Card.Title>
+                    <Card.Text className="Card">
+                        <div>
+                            <h5>TwitchBuds Creator</h5>
+                        </div>
+                    Software Developer that loves to pay it forward. Creator of TwitchBuds & CryptoWatchr.
+                    </Card.Text>
+                    <Button className="LoginHeader ButtonShadow" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
+                  </Card.Body>
+                </Card>
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                  <Card.Img variant="top" className="Card" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>DNP3</Card.Title>
+                    <Card.Text className="Card">
+                    Computer Engineer who does insane giveaways. Often referred to as the "Oprah" of Twitch {'&'} Twitter.
+                    </Card.Text>
+                    <Button variant="primary" className="LoginHeader ButtonShadow" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
+                  </Card.Body>
+                </Card>
+
+            </div>
+            </>
+        )}
+
         {!currentUser && (
             <>
             <h3>Top Supporters</h3>
@@ -248,7 +266,7 @@ export default function Login() {
             <div className="d-flex m-1">
 
                 <Card className="Card m-2" style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
+                  <Card.Img variant="top" className="Card" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>Gwardo420</Card.Title>
                     <Card.Text className="Card">
@@ -257,18 +275,18 @@ export default function Login() {
                     </div>
                     Software Developer that loves to pay it forward. Creator of TwitchBuds {'&'} CryptoWatchr.
                     </Card.Text>
-                    <Button className="LoginHeader" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
+                    <Button className="LoginHeader ButtonShadow" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
                   </Card.Body>
                 </Card>
 
                 <Card className="Card m-2" style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
+                  <Card.Img variant="top" className="Card" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>DNP3</Card.Title>
                     <Card.Text className="Card">
                     Computer Engineer who does insane giveaways. Often referred to as the "Oprah" of Twitch {'&'} Twitter.
                     </Card.Text>
-                    <Button className="LoginHeader" variant="primary" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
+                    <Button className="LoginHeader ButtonShadow" variant="primary" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
                   </Card.Body>
                 </Card>
             </div>
@@ -299,7 +317,7 @@ export default function Login() {
                                 </Form.Label>
                                 <Form.Control type="password" ref={passwordRef} required/>
                             </Form.Group>
-                            <Button disabled={loading} className="w-100" type="submit">Log In</Button>
+                            <Button disabled={loading} className="w-100 ButtonShadow" type="submit">Log In</Button>
                         </Form>
                         <div>
                             <Link to="/forgot-password">
@@ -314,6 +332,7 @@ export default function Login() {
                 </>
             )}
 
+            <footer className="text-center text-white mb-3">Created by Gwardo420 | Supporting Streamers WorldWide</footer>
         </>
     )
 }

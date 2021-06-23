@@ -105,12 +105,12 @@ export default function Dashboard() {
         <>
 
         <div className="CardInfo mt-3 text-center">
-        <img className="DashboardPicture mt-3" src={currentUser.photoURL}></img>
+        <img className="DashboardPicture mt-3" src={currentUser.photoURL || "https://www.valleyroadwines.com/wp-content/uploads/2013/04/Anon-Person.png"} height="60"></img>
             <h5 className="mt-3 mb-3">{currentUser.displayName ? <h5>Welcome to your Dashboard <p>{currentUser.displayName}</p></h5> : <h5>Signed in with Email {currentUser.email}</h5>}</h5>
             
             <div className="Card mt-3">
                 <h5>Account Email:</h5>
-                <div className="text-center">{currentUser.displayName ? <div>{currentUser.email}</div> : <div>{currentUser.email1}</div>}</div>
+                <div className="text-center">{currentUser.email}</div>
                 <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
                 <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
                 <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
@@ -166,7 +166,7 @@ export default function Dashboard() {
         </div>
 
         <div className="Card mt-3">
-            <h3 className="text-center text-white">Other Stuff</h3>
+            <h3 className="text-center text-white">Promotion Section</h3>
             <Card className="SubmitPromo mb-3 m-3">
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}
@@ -186,12 +186,6 @@ export default function Dashboard() {
                         <Button variant="info" onClick={handleContactForm}>Contact Us</Button>
                     </div>
 
-                    <div className="text-center text-white mt-3">
-                        Currently signed in as {currentUser.displayName ? <h3>{currentUser.displayName}</h3> : <><h3>{currentUser.email}</h3>
-                    <Link to="/update-profile" className="btn btn-primary w-100 mt-3">
-                        Update Email/Password
-                        </Link></>}
-                    </div>
                 </Card.Body>
             </Card>
         </div>
