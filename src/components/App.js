@@ -24,10 +24,10 @@ function App() {
     return (
         <>
         <div className="Background">
-            
-        <img className="HeaderImage" src={TwitchBudsHeader}></img>
+
+        <img></img>    
         
-        <Container className="d-flex align-items-center justify-content-center" style={{  minHeight: "100vh" }}>
+        <Container className="d-flex align-items-center justify-content-center " style={{  minHeight: "100vh" }}>
                 
             <div className="w-100 MarginNegative" style={{ maxWidth: "600px"}}>
             <Toaster />

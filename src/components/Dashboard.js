@@ -104,22 +104,18 @@ export default function Dashboard() {
     return (
         <>
 
-        <div className="CardInfo mt-1 text-center">
-        <img className="DashboardPicture mt-1" src={currentUser.photoURL}></img>
+        <div className="CardInfo mt-3 text-center">
+        <img className="DashboardPicture mt-3" src={currentUser.photoURL}></img>
             <h5 className="mt-3 mb-3">{currentUser.displayName ? <h5>Welcome to your Dashboard <p>{currentUser.displayName}</p></h5> : <h5>Signed in with Email {currentUser.email}</h5>}</h5>
             
             <div className="Card mt-3">
                 <h5>Account Email:</h5>
                 <div className="text-center">{currentUser.displayName ? <div>{currentUser.email}</div> : <div>{currentUser.email1}</div>}</div>
-            </div>
-
-            <div className="Card mb-3 mt-3">
                 <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
                 <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
                 <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
                 <Button variant="info" className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
-            </div>   
-
+            </div>
         </div>
 
         {promotions && (
@@ -170,7 +166,7 @@ export default function Dashboard() {
         </div>
 
         <div className="Card mt-3">
-            <h3 className="text-center text-white">Purchased Promotions</h3>
+            <h3 className="text-center text-white">Other Stuff</h3>
             <Card className="SubmitPromo mb-3 m-3">
                 <Card.Body className="SubmitPromo">
                     {error && <Alert variant="danger">{error}</Alert>}

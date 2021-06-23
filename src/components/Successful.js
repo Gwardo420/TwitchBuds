@@ -10,7 +10,7 @@ export default function Help() {
     const history = useHistory()
 
     setTimeout(() => {
-        history.push('/login')
+        history.push('/')
     }, 2000)
 
     return (
@@ -18,7 +18,7 @@ export default function Help() {
         <div className="text-center mt-3 text-white ">
             <img height="70" src={gwardo}></img>
             <h3>Welcome to Twitch Buds!</h3>
-            <h3>Redirecting back to the homepage...</h3>
+            <h3>Loading your Dashboard...</h3>
         </div>
         </>
     )

@@ -58,7 +58,7 @@ export default function PromotionGiveaway() {
 
     return (
         <>
-        <div className="Card">
+        <div className="Card mt-3">
             <Card className="Card">
                 <Card.Body>
                     <h2 className="text-center">Submit A Promotion</h2>

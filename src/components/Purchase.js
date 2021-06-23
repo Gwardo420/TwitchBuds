@@ -29,7 +29,7 @@ export default function Purchase() {
 
         <>
 
-        <div className="PromotionCard text-center">
+        <div className="PromotionCard text-center mt-5">
             <Button className="m-1" onClick={dashboard}>Back to Dashboard</Button>    
             <Button className="m-1" onClick={about}>What is Twitch Buds?</Button>   
         </div>

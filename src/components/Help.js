@@ -38,9 +38,9 @@ export default function Help() {
 
     return (
         <>
-        <div className="text-center mt-3 text-white">
+        <div className="text-center text-white">
             
-            <h1 className="mt-3">Simple Streamer Promotion</h1>
+            <h1 className="mt-5">Simple Streamer Promotion</h1>
             <div className="PromotionCard">
                 <Button className="m-1" onClick={handleSumbit}>Return To Dashboard</Button>
                 <Button className="m-1" onClick={meetCreator}>Twitch Buds Creator</Button>

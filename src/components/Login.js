@@ -19,6 +19,9 @@ export default function Login() {
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
+    //  Auth Error
+    const [authError, setAuthError] = useState('')
+
     // Set New Promotion List
     const [loading2, setLoading2] = useState(false)
     const [promotions, setPromotions] = useState()
@@ -97,6 +100,14 @@ export default function Login() {
         history.push('/')
     }
     
+    function handleDNP3() {
+        window.open('https://twitch.tv/dnp3')
+    }
+
+    function handleGwardo() {
+        window.open('https://twitch.tv/gwardo420')
+    }
+
     async function handleLogout() {
         try{
             await logout()
@@ -106,7 +117,7 @@ export default function Login() {
             });
 
             history.push('/login')
-        } catch(err) {
+        } catch(err) { 
             console.log(err)
         }
     }
@@ -115,32 +126,37 @@ export default function Login() {
         history.push('/help')
     }
 
+    function handlePurchase() {
+
+        if(currentUser){
+            history.push('/purchase')
+        } else {
+            setAuthError('⚠️ You have to sign in to purchase a promotion!')
+            toast('Please sign in to purchase a promotion!', {
+                icon: '⚠️',
+            });
+        }
+
+    }
+
     return (
         <>
+        <h1 className="Title text-white text-center">Simple promotion for Gamers, Creators {'&'} Brands!</h1>
         <div className="text-center mt-3 text-white">
+            
         <p>
             <div>
-                <h1 className="mt-3">Welcome to Twitch Buds!</h1>
-                <text>
-                    NEXT LEVEL STREAMER PROMOTION
-                    </text>
-            </div>
-            </p>
-            
-            {currentUser && (
-                <>
-                    <div className="Card mb-3">
-                        <h5>Welcome, {currentUser.displayName}!</h5>
-                        <Button variant="info" className="m-1" onClick={visitDashboard}>Visit Dashboard</Button>
-                        <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
-                    </div>
-                </>
-            )}
+                <div className="mt-3">
+                <Button variant="info" className="m-1" onClick={handleTwitter}>Twitter</Button>
+                <Button variant="info" className="m-1" onClick={handleDiscord}>Discord</Button>
+                <Button variant="info" className="m-1" onClick={meetCreator}>Creator</Button>
+                <Button variant="info" className="m-1" onClick={contact}>Contact TwitchBuds</Button>
+                <Button variant="info" className="m-1" onClick={handleWorks}>Take a tour!</Button>
+                </div>
 
             {!currentUser && (
-                <div className="text-center Card mt-3 mb-3">
-                    <h4 className="text-center mb-4">Login to Twitch Buds</h4>
-                    <Button variant="primary" className="w-100" block onClick={twitterLogin}>
+                <div className="mt-3 m-3">
+                    <Button variant="success" size="sm" className="w-50" onClick={twitterLogin}>
                         <div className="text-center mb-1">
                             <img src={twitterPNG} height="30"></img>
                         </div>
@@ -151,47 +167,123 @@ export default function Login() {
                 </div>
             )}
 
-
-            <div className="PromotionCard mt-3">
-                <h3>Our Social Media</h3>
-                <Button variant="info" className="m-1" onClick={handleTwitter}>Twitter</Button>
-                <Button variant="info" className="m-1" onClick={handleDiscord}>Discord</Button>
-                <Button variant="info" className="m-1" onClick={meetCreator}>Creator</Button>
+            <div>
+                {authError && (
+                    <div>{authError}</div>
+                )}
+            <Button onClick={handlePurchase}>Purchase Promotion</Button>
             </div>
 
-            <div className="PromotionCard mt-3">
-                <h3>Contact Us Directly</h3>
-                <Button variant="info" className="m-1" onClick={contact}>Contact TwitchBuds</Button>
-            </div>
 
-            <div className="PromotionCard mt-3">
-                <h3>See how this works</h3>
-                <Button variant="info" className="m-1" onClick={handleWorks}>Take a tour!</Button>
             </div>
+        </p>
+            
+        {currentUser && (
+            <>
+                <div className="Card mb-3">
+                    <h5>Welcome, {currentUser.displayName}!</h5>
+                    
+                    <div className="Description">
+                        <text>
+                            Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
+                        </text>
+                    </div>
+
+                    <Button variant="info" className="m-1 LoginHeader text-white" onClick={visitDashboard}>Visit Dashboard</Button>
+                    <Button variant="info" className="m-1 LoginHeader text-white" onClick={handleLogout}>Sign Out</Button>
+                </div>
+            </>
+        )}
+
+        {currentUser && (
+            <>
+            <h3>Top Supporters</h3>
+
+            <div className="d-flex m-1">
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>Gwardo420</Card.Title>
+                    <Card.Text className="Card">
+                        <div>
+                            <h5>TwitchBuds Creator</h5>
+                        </div>
+                    Software Developer that loves to pay it forward. Creator of TwitchBuds & CryptoWatchr.
+                    </Card.Text>
+                    <Button className="LoginHeader" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
+                  </Card.Body>
+                </Card>
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>DNP3</Card.Title>
+                    <Card.Text className="Card">
+                    Computer Engineer who does insane giveaways. Often referred to as the "Oprah" of Twitch {'&'} Twitter.
+                    </Card.Text>
+                    <Button variant="primary" className="LoginHeader" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
+                  </Card.Body>
+                </Card>
+            </div>
+            </>
+        )}
+
+        {!currentUser && (
+            <div className="text-center Card mt-3 mb-3">
+                
+                <div className="Description">
+                    <text>
+                        Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
+                    </text>
+                </div>
+                
+            </div>
+        )}
+
+        {!currentUser && (
+            <>
+            <h3>Top Supporters</h3>
+
+            <div className="d-flex m-1">
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>Gwardo420</Card.Title>
+                    <Card.Text className="Card">
+                    <div>
+                        <h5>TwitchBuds Creator</h5>
+                    </div>
+                    Software Developer that loves to pay it forward. Creator of TwitchBuds {'&'} CryptoWatchr.
+                    </Card.Text>
+                    <Button className="LoginHeader" variant="primary" onClick={handleGwardo}>Visit Gwardo420's Twitch</Button>
+                  </Card.Body>
+                </Card>
+
+                <Card className="Card m-2" style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
+                  <Card.Body>
+                    <Card.Title>DNP3</Card.Title>
+                    <Card.Text className="Card">
+                    Computer Engineer who does insane giveaways. Often referred to as the "Oprah" of Twitch {'&'} Twitter.
+                    </Card.Text>
+                    <Button className="LoginHeader" variant="primary" onClick={handleDNP3}>Visit DNP3's Twitch</Button>
+                  </Card.Body>
+                </Card>
+            </div>
+            </>
+        )}
 
         {loading2 && (
             <h3 className="Card mt-3">Loading current promotions...</h3>
         )}
-
-        <div className="Card mt-3">
-            <h3>Recent Tweets</h3>
-            <TwitterTimelineEmbed
-              sourceType="profile"
-              // The preferred screen name goes next: 
-              screenName="TwitchBuds"
-              // Style options goes here:
-              options={{ height: 600 }}
-              theme="dark"
-            />
-        </div>
-
         </div>
 
         {!currentUser && (
                 <>
-
                 <Card className="Card mt-4" >
-                    <h4 className="text-center mb-4 mt-4">Login with Email</h4>
+                    <h4 className="text-center mb-4 mt-4 LoginHeader">Login with Email</h4>
                     <Card.Body>
                         {error && <Alert variant="danger">{error}</Alert>}
                         <Form className="text-white" onSubmit={handleSumbit}>
@@ -216,17 +308,12 @@ export default function Login() {
                         </div>
                     </Card.Body>
                 </Card>
-                <div className="w-100 text-center mt-3 text-white text-shadow Card">
+                <div className="w-100 text-center mt-3 mb-3 text-white text-shadow Card">
                     Need an account? <Link to="/signup"> Sign Up </Link>
                  </div>
                 </>
             )}
 
-
-        <div className="Card text-center mt-3 mb-3">
-            <h3>Twitch Buds Channel</h3>
-            <iframe src={"https://player.twitch.tv/?channel=twitchbuds&parent=https://www.twitchbuds.com/login"} frameborder="0" allowfullscreen="true" scrolling="no"></iframe>
-        </div>
         </>
     )
 }

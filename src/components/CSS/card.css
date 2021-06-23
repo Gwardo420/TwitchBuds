@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suez+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.Title {
+    font-family: 'Suez One', serif;
+}
+
+.Description {
+    font-size: large;
+    font-family: 'Lato', sans-serif;
+}
+
+.LoginHeader {
+    text-shadow: 0 0 10px black;
+    background: linear-gradient(to right,  rgb(255, 0, 242), rgb(0, 174, 255));
+    margin-top: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 .Card {
     color: white;
     text-shadow: 0 0 10px black;
-    background: linear-gradient(rgb(140, 0, 255), rgb(204, 0, 255));
+    background: url('../images/bgGradient.jpg');
     border-radius: 5px;
     box-shadow: 0 0 10px black;
     padding: 5px;
@@ -11,13 +33,11 @@
 }
 
 .CardInfo {
-
     text-shadow: 0 0 10px black;
     color: white;
     background: linear-gradient(to right, purple, magenta);
     padding: 1.5rem;
     border-radius: 10px;
-
 }
 
 .DashboardPicture {
@@ -38,7 +58,7 @@
 .Background {
     background-size: cover;
     background-position: cover;
-    background-image: url("../images/purpleshade.jpg");
+    background-image: url("../images/bgGradient.jpg");
 }
 
 .Gwardo {
@@ -73,10 +93,6 @@
 
 .PromotionStatus {
     background: rgb(255, 123, 0);
-}
-
-.MarginNegative {
-    margin-top: -10%;
 }
 
 .HeaderImage {
