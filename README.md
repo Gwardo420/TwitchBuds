@@ -1,5 +1,17 @@
-# Twitch Buds
-### 📺 Next Level Streamer Promotion
+
+<p align="center">
+  <a href="https://github.com/othneildrew/Best-README-Template">
+    <img src="https://pbs.twimg.com/profile_banners/1137440925343506432/1622892111/1500x500" alt="Logo" >
+  </a>
+
+  <h3 align="center">Next Level Growth Platform for Gamers, Creators & Brands</h3>
+
+  <p align="center">
+    Start growing your community with TwitchBuds today!
+    <br/>
+    <a href="www.twitchbuds.com">Visit TwitchBuds Website</a>
+  </p>
+</p>
 
 ### Upcoming Updates / Changes
 - [x] Twitch Buds Hub
@@ -8,18 +20,4 @@
 - [ ] Twitter Retweet Picker
 - [ ] Twitch Buds Developer Timeline
 
-## Apply for a simple social media promotion
 
-![Apply For Promotion](https://i.imgur.com/1uNirVq.png)
-
-## 💜 A few kind words
-
-![Social Media Review 1](https://i.imgur.com/NjyAdKG.png)
-
-![Social Media Review 2](https://i.imgur.com/vRcaPsk.png)
-
-
-## Links
-If you would like to check out Twitch Buds you can do so here:
-
-[Twitch Buds Website](https://twitchbuds.com)
