@@ -8,23 +8,6 @@ import { TwitterTweetEmbed, TwitterTimelineEmbed } from 'react-twitter-embed'
 export default function Purchase() {
 
     const history = useHistory()
-    const [day, setDay] = useState()
-
-    function getDay() {
-        let date = new Date()
-
-        let day1 = date.getDay()
-        
-        var options = {weekday: 'long'}
-
-        let newDate = new Intl.DateTimeFormat('en-US', options).format(day1)
-
-        setDay(`${newDate}`)
-    }
-
-    useEffect(()=> {
-        getDay()
-    }, [])
 
     async function dashboard() {
         history.push('/')
@@ -45,43 +28,39 @@ export default function Purchase() {
     return (
 
         <>
-
         <div className="PromotionCard text-center mt-5">
             <Button className="m-1" onClick={dashboard}>Back to Dashboard</Button>    
             <Button className="m-1" onClick={about}>What is Twitch Buds?</Button>   
         </div>
-        
-        <div className="Card text-center">
+
+        <div className="Card text-center mb-3">
+
+        <h3 className="SimplePromotions text-center text-white">Purchase 48 Hour Promotion ($50.00)</h3>
+        <div className=" m-3">
+            <text>
+                All Promotions are ran after the payment has been cleared!
+            </text>
+                <Paypal />
+            </div> 
             
             <div className="Description mt-3 mb-3">
-                    <h5>➡️ How This Works ⬅️</h5>
+                    <h3 className="SimplePromotions">➡️ How This Works ⬅️</h3>
                     <h5>
                         Offering an incentive to grow your Twitch page or Twitter page. Each promotion will offer a reward for retweeting & follow your Twitch or your Twitter. This will help another streamer while helping you grow your social media or content creation. 
                     </h5>
                 </div>
-            <div className="Description">You can see examples down below! 👇</div>
-
-            <div className="Description mt-3 mb-3">
-                Promotion cost's are $50.00 USD
-            </div>
+            <div className="Description">(You can see examples down below!)</div>
 
             <div className="Description PromotionCard mt-3 mb-3">
-                <h3>Your Promotion Example</h3>
-
+            <h3 className="SimplePromotions">Your Promotion Example</h3>
                 <div className="">
                     <text>
                         I will give a random user 2,000 bits (or $25) that retweets this and follows (your_handle) in the next 48 hours!
                     </text>    
-
-                    <div className="mt-3">Happy {day} 💜</div>
                 </div>            
             </div>
             
-            <Paypal />
-
-            <div className="Description mt-3">
-                           
-                <div className="d-grid justify-content-center align-items-center">
+            <div className="d-grid justify-content-center align-items-center">
                     <h3>Promotion Example #1</h3>
                     <TwitterTweetEmbed 
                     // Here goes your copied ID.
@@ -89,14 +68,10 @@ export default function Purchase() {
                     theme="dark"
                 />
                 <Button onClick={GotoPromotion1}>View This Tweet</Button>
-                </div>
-
-                <img></img>
-                <img></img>
-
-            </div>    
+                </div> 
 
         </div>
+
 
         </>
     )

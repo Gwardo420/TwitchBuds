@@ -23,6 +23,7 @@
 }
 
 .SimplePromotions {
+    text-shadow: 0 5px 5px black;
     box-shadow: 0 0 10px black;
     border-style: solid;
     border-radius: 5px;
