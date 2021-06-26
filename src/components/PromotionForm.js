@@ -29,8 +29,8 @@ export default function PromotionGiveaway() {
         database.promotion.doc(currentUser.email).collection("submittions").add({
             image: currentUser.photoURL,
             twitterUsername: currentUser.displayName,
-            promoName: twittername,
-            twitchUsername: twitchName,
+            promoName: twittername || "Not Specified",
+            twitchUsername: twitchName || "Not Specified",
             promoLength: 24,
             userEmail: currentUser.email,
             promotionType: promoType,
@@ -50,7 +50,11 @@ export default function PromotionGiveaway() {
 
         setTwittername("")
         setTwitchName("")
+        setTwitchURL("")
         setPromoType("")
+        setTwitterURL("")
+        
+
         setMessage("Promotion Form Succesfully Submitted")
         setLoading(false)
         history.push("/")

@@ -194,7 +194,7 @@ export default function Login() {
         )}
 
         {!currentUser && (
-            <div className="text-center Card mt-3 mb-3">
+            <div className="text-center mt-3 mb-3">
                 
                 <div className="Description">
                     <text>
@@ -326,6 +326,7 @@ export default function Login() {
                         </div>
                     </Card.Body>
                 </Card>
+                
                 <div className="w-100 text-center mt-3 mb-3 text-white text-shadow Card">
                     Need an account? <Link to="/signup"> Sign Up </Link>
                  </div>

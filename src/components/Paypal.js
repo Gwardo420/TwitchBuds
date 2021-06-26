@@ -38,7 +38,7 @@ export default function Paypal() {
     })
 
     return (
-        <div className="Card">
+        <div className="Description">
             {purchase && (
                 <div>
                     <h3>
@@ -48,7 +48,7 @@ export default function Paypal() {
                         Thank you for choosing Twitch Buds!
                     </h3>
                     <h3 className="PromotionCard m-3 mt-3 mb-3">
-                        You will be redirected in a few seconds!
+                        You will be redirected back to Twitch Buds in a few seconds!
                     </h3>
                     </div>
             )}

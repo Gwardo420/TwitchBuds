@@ -10,12 +10,14 @@ export default function ContactTwitchBuds() {
     const { currentUser } = useAuth()
     const [loading, setLoading] = useState(false)
     const [discordId, setDiscordId] = useState("")
+    const [twitterName, setTwitterUsername] = useState("")
     const [contactEmail, setContactEmail] = useState("")
     const [question, setQuestion] = useState("")
     const [message, setMessage] = useState(false)
     const history = useHistory()
 
     function handleSubmit(e) {
+
         e.preventDefault()
         setLoading(true)
         setMessage('Submission Successful! Returning you to your Dashboard if you are signed in.')
@@ -24,6 +26,8 @@ export default function ContactTwitchBuds() {
             database.contactForms.doc("Contact").collection("Users Contact").add({
                 question: question,
                 contactAddress: contactEmail,
+                twitterUsername: twitterName || "Not Supplied",
+                discordUsername: discordId || "Not Supplied",
                 createdAt: serverTimestamp()
             })
         }, 2000)
@@ -31,6 +35,7 @@ export default function ContactTwitchBuds() {
         setContactEmail("")
         setQuestion("")
         setDiscordId("")
+        setTwitterUsername("")
 
         setTimeout(() => {
             history.push('/')
@@ -40,10 +45,11 @@ export default function ContactTwitchBuds() {
 
     return (
         <>
+        <h1 className="ButtonShadow LoginHeader text-white text-center">Contact TwitchBuds Directly</h1>
         <div className="Card">
             <Card className="Card">
+                <h3 className="text-center">Contact Form</h3>
                 <Card.Body>
-                    <h2>Contact Twitch Buds</h2>
                     <Form onSubmit={handleSubmit}>
                         <Form.Group>
                         <Form.Label className="mt-3">
@@ -61,7 +67,7 @@ export default function ContactTwitchBuds() {
                             </Form.Control>
 
                             <Form.Label className="mt-3"> 
-                                Question
+                                Question / Feedback
                             </Form.Label>
                             <Form.Control
 
@@ -88,11 +94,25 @@ export default function ContactTwitchBuds() {
                             >
                                 
                             </Form.Control>
+
+                            <Form.Label className="mt-3"> 
+                                Twitter Username
+                            </Form.Label>
+                            <Form.Control
+
+                            type="text" 
+                            value={twitterName}
+                            onChange={e => setTwitterUsername(e.target.value)}
+                            placeholder="Twitter Username (Optional)"
+
+                            >
+                                
+                            </Form.Control>
                             
 
                         </Form.Group>
                         {message && <Alert className="Success text-center text-white" variant="success">{message}</Alert>}
-                        {!message && <Button disabled={loading} className="w-100" type="submit">Submit Promotion</Button>}
+                        {!message && <Button disabled={loading} className="w-100 ButtonShadow LoginHeader" type="submit">Submit</Button>}
                     </Form>
                 </Card.Body>
             <div>

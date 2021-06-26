@@ -41,7 +41,8 @@
 }
 
 .Description {
-    font-size: large;
+    text-shadow: 0 5px 5px black;
+    font-size: larger;
     font-family: 'Lato', sans-serif;
 }
 

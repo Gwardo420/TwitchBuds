@@ -38,9 +38,9 @@ function App() {
                             <PrivateRoute path="/purchase-success" component={PurchaseSuccess} />
                             <PrivateRoute path="/successful" component={Successful} />
                             <PrivateRoute path="/purchase" component={Purchase} />
-                            <PrivateRoute path="/retweet-picker" component={RetweetChecker}/>
+                            <PrivateRoute path="/retweet-picker" component={RetweetChecker} />
                             <PrivateRoute exact path="/" component={Dashboard} />
-                            <PrivateRoute path="/update-profile" component={UpdateProfile}/>
+                            <PrivateRoute path="/update-profile" component={UpdateProfile} />
                             <PrivateRoute path="/setup-promotion" component={PromotionForm} />
                             <Route path="/contact" component={ContactTwitchBuds} />
                             <Route exact path="/" component={Dashboard} />

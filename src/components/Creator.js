@@ -56,8 +56,8 @@ export default function Creator() {
         <>
         <div className="PromotionCard text-center">
 
-            <Button variant="info" className="m-1" onClick={dashboard}>Back to Dashboard</Button>    
-            <Button variant="info" className="m-1" onClick={about}>What is Twitch Buds?</Button>   
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={dashboard}>Back to Dashboard</Button>    
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={about}>What is Twitch Buds?</Button>   
 
         </div>
         <div className="text-center Card">
@@ -91,10 +91,10 @@ export default function Creator() {
             <div>
                 <h3>Check out my other projects</h3>
             </div>
-            <Button variant="info" className="m-1" onClick={cryptoWatchr}>CryptoWatchr</Button>
-            <Button variant="info" className="m-1" onClick={cluChart}>CluChart</Button>
-            <Button variant="info" className="m-1" onClick={cluBot}>CluBot</Button>
-            <Button variant="info" className="m-1" onClick={linkedIn}>LinkedIn</Button>
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={cryptoWatchr}>CryptoWatchr</Button>
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={cluChart}>CluChart</Button>
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={cluBot}>CluBot</Button>
+            <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={linkedIn}>LinkedIn</Button>
         </div>
 
         </>

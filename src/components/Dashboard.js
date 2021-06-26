@@ -110,11 +110,11 @@ export default function Dashboard() {
             
             <div className="Card mt-3">
                 <h5>Account Email:</h5>
-                <div className="text-center">{currentUser.email}</div>
-                <Button variant="info" className="m-1" onClick={handleHomepage}>Homepage</Button>
-                <Button variant="info" className="m-1" onClick={handleLogout}>Sign Out</Button>
-                <Button variant="info" className="m-1" onClick={handleSupport}>Support Project</Button>
-                <Button variant="info" className="m-1" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
+                <div className="text-center mb-3"><strong>{currentUser.email}</strong></div>
+                <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={handleHomepage}>Homepage</Button>
+                <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={handleLogout}>Sign Out</Button>
+                <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={handleSupport}>Support Project</Button>
+                <Button variant="info" className="m-1 ButtonShadow LoginHeader" onClick={handleTwitchBuds}>What is Twitch Buds?</Button>
             </div>
         </div>
 
@@ -124,7 +124,7 @@ export default function Dashboard() {
                     <>
                     <div className="Card text-center mt-3">
                         <h3>See your promotions</h3>
-                        <Button className="" onClick={setPromotionsFunction}>View your promotions</Button>  
+                        <Button className="ButtonShadow LoginHeader mb-3" onClick={setPromotionsFunction}>View your promotions</Button>  
                     </div>  
                 </>
                 )}    
@@ -133,8 +133,8 @@ export default function Dashboard() {
                     <>
                     <h5 className="text-center text-white mt-3"> Promotion's Purchased </h5>     
 
-                    <div className="Card text-center">
-                    <Button onClick={hidePromotions}>Hide Promotion's</Button>    
+                    <div className="Card text-center d-grid">
+                    <Button className="ButtonShadow LoginHeader" onClick={hidePromotions}>Hide Current Promotions</Button>    
                         {promotions.map((promos) => (
                             <Card className="PromotionCard text-center mt-3" id={promos.contactAddress}>
                                 <Card.Title className="Card">
