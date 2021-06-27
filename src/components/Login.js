@@ -139,6 +139,10 @@ export default function Login() {
 
     }
 
+    function handleBotStuff() {
+        window.open(`https://retweetpicker.vercel.app/`)
+    }
+
     return (
         <>
         <h1 className="Title text-white text-center">Simple promotion for Gamers, Creators {'&'} Brands!</h1>
@@ -154,6 +158,13 @@ export default function Login() {
                 <Button variant="info" className="m-1 ButtonShadow" onClick={handleWorks}>Take a tour!</Button>
                 </div>
 
+                <div>
+                    {authError && (
+                        <div>{authError}</div>
+                    )}
+                <Button className="ButtonShadow mt-3" onClick={handlePurchase}>Purchase A Promotion</Button>
+                </div>
+
                 {!currentUser && (
                     <div className="mt-3 m-3">
                         <Button variant="success" size="sm" className="w-50 ButtonShadow" onClick={twitterLogin}>
@@ -167,43 +178,38 @@ export default function Login() {
                     </div>
                 )}
 
-                <div>
-                    {authError && (
-                        <div>{authError}</div>
-                    )}
-                <Button className="ButtonShadow mt-3" onClick={handlePurchase}>Purchase A Promotion</Button>
-                </div>
+                {currentUser && (
+                    <>
+                        <div className="Card mb-3 mt-3">
+                            <h5>Welcome, {currentUser.displayName || currentUser.email}!</h5>
+
+                            <div className="Description m-3">
+                                <text>
+                                    Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
+                                </text>
+                            </div>
+                
+                            <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={visitDashboard}>Visit Dashboard</Button>
+                            <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={handleLogout}>Sign Out</Button>
+                        </div>
+                    </>
+                )}
+
+                {!currentUser && (
+                    <div className="text-center mt-3 mb-3">
+
+                        <div className="Description">
+                            <text>
+                                Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
+                            </text>
+                        </div>
+
+                    </div>
+                )}
+
             </div>
         </p>
             
-        {currentUser && (
-            <>
-                <div className="Card mb-3">
-                    <h5>Welcome, {currentUser.displayName || currentUser.email}!</h5>
-                    
-                    <div className="Description m-3">
-                        <text>
-                            Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
-                        </text>
-                    </div>
-
-                    <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={visitDashboard}>Visit Dashboard</Button>
-                    <Button variant="info" className="m-1 ButtonShadow LoginHeader text-white" onClick={handleLogout}>Sign Out</Button>
-                </div>
-            </>
-        )}
-
-        {!currentUser && (
-            <div className="text-center mt-3 mb-3">
-                
-                <div className="Description">
-                    <text>
-                        Grow your audience with the most trusted streamer promotion platform. Gain organic followers with fully managed promotional campaigns - designed to help you grow your community.
-                    </text>
-                </div>
-                
-            </div>
-        )}
 
         <div className="SimplePromotions">
             <video className="mt-4 SimplePromotionsVideo" src="https://i.imgur.com/rRzU6tk.mp4" width="100%" autoPlay loop></video>
@@ -223,6 +229,19 @@ export default function Login() {
         </div>
         </div>
 
+        <div className="Description SimplePromotions mt-3">
+            <h2>Discord Retweet Picker</h2>
+            <div className="mt-3">
+                <text>I created a Discord Bot that will help you choose a winner for your Twitter Giveaway!</text>
+            </div>
+            <div className="mt-3 mb-3">
+                <text>This will choose from the Retweets on the account that you provide.</text>
+            </div>
+            <div>
+                <img className="SimplePromotionsVideo w-100" src="https://i.imgur.com/ptFzvsD.gif"></img>
+            </div>
+            <Button className="mt-3 mb-2" onClick={handleBotStuff}>Retweet Picker Homepage</Button>
+        </div>
 
         {currentUser && (
             <>
