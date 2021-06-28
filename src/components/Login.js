@@ -224,7 +224,7 @@ export default function Login() {
                     <h3 className="LoginHeader">Recent Twitch Buds Winners</h3>
                     <div className="d-flex justify-content-center">
                     <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
-                    <Card.Img variant="top" className="Gwardo" src="https://pbs.twimg.com/profile_images/1407247307645624320/Bi1JbfYd_400x400.jpg" />
+                    <Card.Img variant="top" className="Gwardo" src="https://pbs.twimg.com/profile_images/1407247307645624320/Bi1JbfYd_400x400.jpg"  />
                           <Card.Body>
                             <Card.Title className="LoginHeader">Macy <span className="badge badge-pill badge-dark">500 Bits Winner</span></Card.Title>
                             <Card.Text className="">
@@ -313,7 +313,7 @@ export default function Login() {
             <div className="d-flex justify-content-center SimplePromotions">
 
                 <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
-                <Card.Img variant="top" className="Gwardo" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" height="200"/>
+                <Card.Img variant="top" className="Gwardo" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>Gwardo420 <span className="badge badge-pill badge-dark">Creator</span></Card.Title>
                     <Card.Text className="Description Card">
