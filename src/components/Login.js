@@ -218,11 +218,12 @@ export default function Login() {
                     </div>
                 )}
 
+                <div className="Description Card">Twitch Buds runs giveaways on Twitter to help streamers around the world engage & promote their content seamlessly!</div>   
+
                 <div className="SimplePromotions mt-3">
-                    <div className="Description Card">Twitch Buds runs giveaways on Twitter to help streamers around the world engage & promote their content seamlessly!</div>
                     <h3 className="LoginHeader">Recent Twitch Buds Winners</h3>
                     <div className="d-flex justify-content-center">
-                    <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+                    <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                     <Card.Img variant="top" className="" src="https://pbs.twimg.com/profile_images/1407247307645624320/Bi1JbfYd_400x400.jpg" />
                           <Card.Body>
                             <Card.Title className="LoginHeader">Macy <span className="badge badge-pill badge-dark">500 Bits Winner</span></Card.Title>
@@ -238,7 +239,7 @@ export default function Login() {
                           </Card.Body>
                         </Card>
 
-                        <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+                        <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                         <Card.Img variant="top" className="" src="https://pbs.twimg.com/profile_images/1359724436337938441/i2pFGxez_400x400.jpg" />
                           <Card.Body>
                             <Card.Title className="LoginHeader">Dylan Dysa <span className="badge badge-pill badge-dark">500 Bits Winner</span></Card.Title>
@@ -311,7 +312,7 @@ export default function Login() {
 
             <div className="d-flex justify-content-center SimplePromotions">
 
-                <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+                <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                 <Card.Img variant="top" className="" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>Gwardo420 <span className="badge badge-pill badge-dark">Creator</span></Card.Title>
@@ -335,7 +336,7 @@ export default function Login() {
                   </Card.Body>
                 </Card>
 
-                <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+                <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                   <Card.Img variant="top" className="" src="https://static-cdn.jtvnw.net/jtv_user_pictures/fb266945-7611-40bf-822d-c80b084e65ba-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>DNP3 <span className="badge badge-pill badge-dark">Top Supporter</span></Card.Title>
@@ -363,7 +364,7 @@ export default function Login() {
             </div>
 
             <div className="d-flex justify-content-center SimplePromotions">
-            <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+            <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                 <Card.Img variant="top" className="" src="https://pbs.twimg.com/profile_images/1223687120151371782/-uBGaAQk_400x400.jpg" />
                   <Card.Body>
                     <Card.Title>Sighmir <span className="badge badge-pill badge-dark">CTO</span></Card.Title>
@@ -381,7 +382,7 @@ export default function Login() {
                   </Card.Body>
                 </Card>
 
-                <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
+                <Card className="LoginHeader m-1" style={{ width: '18rem' }}>
                   <Card.Img variant="top" className="" src="https://pbs.twimg.com/profile_images/1299722768502665218/O5C7D_zW_400x400.jpg" />
                   <Card.Body>
                     <Card.Title>Black Cartel Gaming <span className="badge badge-pill badge-dark">Top Supporter</span></Card.Title>
