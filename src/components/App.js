@@ -24,11 +24,7 @@ function App() {
     return (
         <>
         <div className="Background">
-
-        <img></img>    
-        
         <Container className="d-flex align-items-center justify-content-center " style={{  minHeight: "100vh" }}>
-                
             <div className="w-100 MarginNegative" style={{ maxWidth: "600px"}}>
             <Toaster />
                 <Router>

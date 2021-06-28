@@ -22,6 +22,21 @@
     border-color: rgb(183, 0, 255);
 }
 
+.SimplePromotionsv2 {
+    text-shadow: 0 5px 5px black;
+    box-shadow: 0 0 10px black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    background: linear-gradient(rgb(0, 182, 142), rgb(0, 145, 182));
+    background-position: center;
+    background-size: cover;
+}
+
 .SimplePromotions {
     text-shadow: 0 5px 5px black;
     box-shadow: 0 0 10px black;
@@ -93,8 +108,8 @@
 
 .Background {
     background-size: cover;
-    background-position: cover;
-    background-image: url("../images/bgGradient.jpg");
+    background-position: center;
+    background-image: url("../images/chillingBG.jpg");
 }
 
 .Gwardo {
