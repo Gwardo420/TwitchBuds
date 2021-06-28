@@ -218,7 +218,7 @@ export default function Login() {
                     </div>
                 )}
 
-                <div className=" mt-3">
+                <div className="SimplePromotions mt-3">
                     <div className="Description Card">Twitch Buds runs giveaways on Twitter to help streamers around the world engage & promote their content seamlessly!</div>
                     <h3 className="LoginHeader">Recent Twitch Buds Winners</h3>
                     <div className="d-flex justify-content-center">
@@ -309,14 +309,14 @@ export default function Login() {
             <>
             <h3 className="LoginHeader">Top Supporters</h3>
 
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center SimplePromotions">
 
                 <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
                 <Card.Img variant="top" className="" src="https://static-cdn.jtvnw.net/jtv_user_pictures/8f14fd20-96bc-4b44-9df1-cb63daa14521-profile_image-300x300.png" />
                   <Card.Body>
                     <Card.Title>Gwardo420 <span className="badge badge-pill badge-dark">Creator</span></Card.Title>
                     <Card.Text className="Description Card">
-                    Software Developer that loves to pay it forward. Creator of TwitchBuds.
+                    Software Developer that loves to pay it forward. Creator of TwitchBuds. Moderate Coding Skills. Gaming Noob.
                     </Card.Text>
                    
                     <section>
@@ -362,7 +362,7 @@ export default function Login() {
 
             </div>
 
-            <div className="d-flex justify-content-center">
+            <div className="d-flex justify-content-center SimplePromotions">
             <Card className="SimplePromotionsv2 m-1" style={{ width: '18rem' }}>
                 <Card.Img variant="top" className="" src="https://pbs.twimg.com/profile_images/1223687120151371782/-uBGaAQk_400x400.jpg" />
                   <Card.Body>
